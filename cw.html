@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Student Management System</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, sans-serif;
+    background: linear-gradient(135deg, #e6f4ff, #f0f9ff);
+    display: flex;
+    justify-content: center;
+    padding: 40px 20px;
+}
+
+.app {
+    width: 100%;
+    max-width: 950px;
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 18px;
+    box-shadow: 0 15px 35px rgba(0, 119, 255, 0.1);
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 25px;
+    color: #0077ff;
+    font-weight: 600;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-bottom: 25px;
+}
+
+.row input,
+.row select {
+    padding: 10px 14px;
+    border-radius: 10px;
+    border: 1px solid #cce7ff;
+    background: #f8fcff;
+    outline: none;
+    transition: 0.3s;
+    font-size: 14px;
+}
+
+.row input:focus,
+.row select:focus {
+    border-color: #66b3ff;
+    box-shadow: 0 0 0 3px rgba(102, 179, 255, 0.2);
+}
+
+button {
+    padding: 10px 18px;
+    border-radius: 10px;
+    border: none;
+    background: #66b3ff;
+    color: white;
+    cursor: pointer;
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+button:hover {
+    background: #3399ff;
+    transform: translateY(-2px);
+}
+
+#list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+#list li {
+    background: #f5fbff;
+    padding: 15px 18px;
+    border-radius: 14px;
+    margin-bottom: 12px;
+    box-shadow: 0 8px 2
+    0px rgba(0, 140, 255, 0.08);
+    transition: 0.3s;
+}
+
+#list li:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 25px rgba(0, 140, 255, 0.15);
+}
+
+.info {
+    margin-top: 8px;
+}
+
+.badge {
+    display: inline-block;
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-size: 12px;
+    margin-right: 6px;
+}
+
+.age-badge {
+    background: #d9f0ff;
+    color: #0077cc;
+}
+
+.course-badge {
+    background: #cce7ff;
+    color: #005fa3;
+}
+
+.not-found {
+    text-align: center;
+    color: gray;
+}
+</style>
+</head>
+
+<body>
+
+<div class="app">
+    <h2>Student Management System</h2>
+    
+    <div class="row">
+        <input id="search" type="text" placeholder="Поиск по имени или фамилии..." />
+        <input id="age-filter" type="number" placeholder="Мин. возраст" />
+        <select id="course">
+            <option value="all">Все курсы</option>
+            <option value="1">1 курс</option>
+            <option value="2">2 курс</option>
+            <option value="3">3 курс</option>
+        </select>
+        <select id="sort">
+            <option value="none">Сортировка</option>
+            <option value="az">Имя (A-Z)</option>
+            <option value="za">Имя (Z-A)</option>
+            <option value="age">Сначала младшие</option>
+        </select>
+        <button id="reset">Reset</button>
+    </div>
+
+    <ul id="list"></ul>
+</div>
+
+<script>
+const students = [
+    { first: "Ali", last: "Khan", age: 19, course: 1 },
+    { first: "Dana", last: "Serikova", age: 21, course: 2 },
+    { first: "Aruzhan", last: "Bolat", age: 18, course: 1 },
+    { first: "John", last: "Smith", age: 22, course: 3 },
+    { first: "Zeynep", last: "Yilmaz", age: 20, course: 2 },
+    { first: "Michael", last: "Brown", age: 23, course: 3 },
+    { first: "Emir", last: "Kaya", age: 19, course: 1 },
+    { first: "Beka", last: "Rakhan", age: 17, course: 2 },
+    { first: "Amir", last: "Wilson", age: 15, course: 3 },
+    { first: "Aidyn", last: "Serikbek", age: 25, course: 3 },
+    { first: "Akberdi", last: "Shailda", age: 17, course: 2 },
+    { first: "Demir", last: "Kaya", age: 18, course: 2 },
+];
+
+const list = document.querySelector("#list");
+const searchInput = document.querySelector("#search");
+const ageInput = document.querySelector("#age-filter");
+const courseSelect = document.querySelector("#course");
+const sortSelect = document.querySelector("#sort");
+const resetBtn = document.querySelector("#reset");
+
+function render(arr) {
+    list.innerHTML = "";
+
+    if (arr.length === 0) {
+        list.innerHTML = "<p class='not-found'>Ничего не найдено</p>";
+        return;
+    }
+
+    arr.forEach(s => {
+        list.innerHTML += `
+            <li>
+                <div>
+                    <strong>${s.first} ${s.last}</strong>
+                </div>
+                <div class="info">
+                    <span class="badge age-badge">Возраст: ${s.age}</span>
+                    <span class="badge course-badge">Курс: ${s.course}</span>
+                </div>
+            </li>
+        `;
+    });
+}
+
+function applyAll() {
+    const searchText = searchInput.value.toLowerCase().trim();
+    const minAge = Number(ageInput.value);
+    const courseValue = courseSelect.value;
+    const sortValue = sortSelect.value;
+
+    let result = students.filter(s => {
+        const fullName = (s.first + " " + s.last).toLowerCase();
+        const matchesSearch = fullName.includes(searchText);
+        const matchesAge = minAge ? s.age >= minAge : true;
+        const matchesCourse = courseValue === "all" || s.course === Number(courseValue);
+        return matchesSearch && matchesAge && matchesCourse;
+    });
+
+    if (sortValue === "az") {
+        result.sort((a, b) => a.first.localeCompare(b.first));
+    } else if (sortValue === "za") {
+        result.sort((a, b) => b.first.localeCompare(a.first));
+    } else if (sortValue === "age") {
+        result.sort((a, b) => a.age - b.age);
+    }
+
+    render(result);
+}
+
+searchInput.addEventListener("input", applyAll);
+ageInput.addEventListener("input", applyAll);
+courseSelect.addEventListener("change", applyAll);
+sortSelect.addEventListener("change", applyAll);
+
+resetBtn.addEventListener("click", () => {
+    searchInput.value = "";
+    ageInput.value = "";
+    courseSelect.value = "all";
+    sortSelect.value = "none";
+    render(students);
+});
+
+render(students);
+</script>
+
+</body>
+</html>

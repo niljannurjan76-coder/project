@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style">
+
+
+</head>
+<style>
+  
+    /* .btn{
+        
+        border:none;
+        background-color: rgb(255, 35, 141);
+        border-radius: 25px;
+        color: white;
+    }
+    #list {
+        padding: 0;
+        margin: 0;
+    }
+
+    #list li {
+        background-color: rgb(213, 213, 213);
+        margin: 5px 0;
+        padding: 10px;
+        border-radius: 5px;
+        display: flex;
+        justify-content: center; 
+        align-items: center;
+    }
+
+    #list li .delete {
+        background-color: red;
+        color: white;
+        border: none;
+        padding: 5px 10px;
+        border-radius: 3px;
+        cursor: pointer;
+    }
+
+    #list li .delete:hover {
+        background-color: darkred;
+    }
+    #addBtn{
+        background-color: pink;
+        border-radius: 15px;
+        padding: 10px 15px;
+        border: none;
+    }
+    #addBtn:hover{
+        background-color: rgb(195, 106, 121);
+    }
+    #todoForm input{
+        background-color: rgb(232, 192, 235);
+        border: none;
+        padding: 10px 15px;
+        border-radius: 15px;
+    }
+    h2{
+        color: pink;
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    }
+
+
+    .modal{
+        display:none;
+        position: fixed;
+        inset:0;
+        background: rgba(0,0,0,0.5);
+    }
+    .modal.show{
+        display:flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .modal-content{
+        background: white;
+        padding: 20px;
+    }
+
+    body.no-scroll{
+        overflow: hidden;
+    }
+    .modal{
+        display: none;
+        position: fixed;
+        inset: 0;
+        background: rgba(0,0,0,0.5);
+        justify-content: center;
+        align-items: center;
+    }
+    .modal.show{
+        display: flex;
+    }
+    .modal-content{
+        background: white;
+        padding: 20px;
+        position: relative;
+        width: 300px;
+    }
+    .close{
+        position:absolute;
+        right:10px;
+        top:10px;
+        cursor:pointer;
+    } */
+
+
+
+    body {
+  font-family: 'Great Vibes', cursive;
+  margin: 0;
+}
+
+nav {
+  background: black;
+  padding: 15px;
+}
+
+#menu {
+  display: flex;
+  gap: 20px;
+  list-style: none;
+  color: white;
+  cursor: pointer;
+  justify-content: space-between;
+}
+
+#menu li {
+  padding: 5px 10px;
+}
+
+#menu li.active {
+  background: white;
+  color: black;
+  border-radius: 5px;
+}
+
+#menu li:hover {
+  opacity: 0.6;
+}
+
+.page {
+  display: none;
+  padding: 20px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.page.active-page {
+  display: block;
+  opacity: 1;
+}
+
+
+
+
+body {
+  background: #fff0f6;
+  color: #4a2c3a;
+}
+
+/* ===== NAVIGATION ===== */
+
+nav {
+  background: linear-gradient(135deg, #ff6fa5, #ff3f81);
+  padding: 15px 0;
+  box-shadow: 0 4px 12px rgba(255, 63, 129, 0.3);
+}
+
+#menu {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  gap: 40px;
+}
+
+#menu li {
+  cursor: pointer;
+  color: white;
+  font-weight: 500;
+  font-size: 18px;
+  padding: 8px 15px;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+#menu li:hover {
+  background: rgba(255,255,255,0.25);
+  transform: translateY(-2px);
+}
+
+#menu li.active {
+  background: white;
+  color: #ff3f81;
+  font-weight: bold;
+  box-shadow: 0 4px 10px rgba(255, 63, 129, 0.3);
+}
+
+/* ===== PAGE CONTENT ===== */
+
+main {
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 20px;
+}
+
+.page {
+  display: none;
+  background: white;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 8px 25px rgba(255, 105, 180, 0.15);
+  animation: fadeIn 0.4s ease;
+}
+
+.page h2 {
+  margin-bottom: 15px;
+  color: #ff3f81;
+}
+
+.active-page {
+  display: block;
+}
+
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+
+
+
+    body {font-family: Arial, sans-serif; padding: 20px; }
+    .row { display: flex; gap: 10px; margin-bottom: 12px; } 
+    button { padding: 8px 12px; cursor: pointer; }
+    ul { padding-left: 18px; } 
+    li { margin: 6px 0; }
+</style>
+<body>
+    <!-- <div id="box">
+        <button id="btn1" class="btn">Button 1</button>
+        <button id="btn2" class="btn">Button 2</button>
+    </div>
+
+    <br />
+    <br />
+
+    <div id="cards">
+        <div class="card">Card 1</div>
+        <div class="card">Card 2</div>
+        <div class="card">Card 3</div>
+    </div>
+
+
+    <ul id="list">
+        <li>Task 1<button class="btn">Delete</button></li>
+        <li>Task 2<button class="btn">Delete</button></li>
+    </ul>
+
+
+    <div id="colors">
+        <button data-color="red" class="btn">Red</button>
+        <button data-color="blue" class="btn">Blue</button>
+        <button data-color="green" class="btn">Green</button>
+    </div>
+
+
+    <table id="table" class="table">
+        <tr><td>Student 1</td></tr>
+        <tr><td>Student 2</td></tr>
+        <tr><td>Student 3</td></tr>
+    </table>
+
+<h2>ToDo List</h2>
+
+<form id="todoForm">
+    <input type="text" id="taskInput" placeholder="Enter task">
+    <button>Add</button>
+</form>
+
+<ul id="list1"></ul> -->
+
+
+
+
+
+
+<!-- <button id="openBtn">Open Modal</button>
+
+<div id="modal" class="modal">
+    <div class="modal-content">
+        <p>Hello World</p>
+        <button id="closeBtn">Close</button>
+    </div>
+</div> -->
+
+
+<!-- <button id="openBtn">Open Modal</button>
+
+<div id="modal" class="modal">
+    <div class="modal-content">
+        <button class="close">&times;</button>
+        <h2>Modal Title</h2>
+        <p>This is a real modal window.</p>
+    </div>
+</div> -->
+
+<!-- 
+<nav>
+  <ul id="menu">
+    <li data-page="home" class="active">Home</li>
+    <li data-page="about">About</li>
+    <li data-page="services">Services</li>
+    <li data-page="contact">Contact</li>
+  </ul>
+</nav>
+
+<main>
+  <section data-content="home" class="page active-page">
+    <h2>Home Page</h2>
+    <p>Welcome to our website.</p>
+  </section>
+
+  <section data-content="about" class="page">
+    <h2>About Us</h2>
+    <p>We are a digital company.</p>
+  </section>
+
+  <section data-content="services" class="page">
+    <h2>Services</h2>
+    <p>We build websites and apps.</p>
+  </section>
+
+  <section data-content="contact" class="page">
+    <h2>Contact</h2>
+    <p>Email us at info@mail.com</p>
+  </section>
+</main>  -->
+
+
+
+
+
+
+<!-- 19.02.2026 -->
+
+<!-- <h2>Students List</h2>
+<button id="btn">Show only 1 course</button>
+<ul id="list"></ul> -->
+
+
+
+  <!-- <h2>Search Students</h2>
+<input type="text" id="search" placeholder="Search name">
+<ul id="list"></ul>
+    <script src="js.js">
+    </script> -->
+
+
+
+
+
+    <!-- <h2>Sort Students</h2>
+    <div class="row">
+    <button id="az">Sort A → Z</button>
+     <button id="za">Sort Z → A</button> 
+     <button id="reset">Reset</button>
+    </div>
+    <ul id="list"></ul> -->
+</body>
+</html>
