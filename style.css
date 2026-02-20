@@ -1,0 +1,9 @@
+.centre-text{
+    border: 5px solid rgb(227, 160, 227);
+    background-color: rgb(227, 160, 227);
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    gap:20px
+
+}
