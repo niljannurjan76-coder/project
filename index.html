@@ -1,236 +1,125 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Comments</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
 
-  <style>
-    * {
-      box-sizing: border-box;
-      font-family: Arial, sans-serif;
-    }
+    <style>
+        body{
+            background-color: rgb(229, 227, 227);
+        }
+       .button{
+            color:aliceblue;
+            background-color: rgb(238, 15, 108);
+            border:solid rgb(238, 15, 108);
+            border-radius: 20px;
+        }
+        .input{
+            border:1.5px solid rgb(238, 15, 108);
+            padding:5px;
+        }
+        .length{
+            font-family: Arial, Helvetica, sans-serif;
+            color:  rgb(238, 15, 108);
+        }
 
-    body {
-      background: #f5f6fa;
-      padding: 40px;
-    }
-
-    .container {
-      max-width: 700px;
-      margin: auto;
-    }
-
-    .comment {
-      background: #fff;
-      display: flex;
-      padding: 16px;
-      border-radius: 10px;
-      margin-bottom: 15px;
-      gap: 16px;
-    }
-
-    .votes {
-      background: #f0f1f5;
-      border-radius: 10px;
-      padding: 10px;
-      text-align: center;
-      width: 40px;
-    }
-
-    .votes button {
-      background: none;
-      border: none;
-      font-size: 18px;
-      cursor: pointer;
-    }
-
-    .votes span {
-      display: block;
-      margin: 6px 0;
-      font-weight: bold;
-    }
-
-    .avatar {
-      width: 40px;
-      height: 40px;
-      border-radius: 50%;
-      overflow: hidden;
-      flex-shrink: 0;
-    }
-
-    .avatar img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-
-    .content {
-      flex: 1;
-    }
-
-    .header {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      margin-bottom: 8px;
-    }
-
-    .time {
-      color: gray;
-      font-size: 14px;
-    }
-
-    .actions {
-      margin-left: auto; 
-      display: flex;
-      gap: 10px;
-      align-items: center; 
-    }
-
-    .actions a {
-      display: flex;
-      align-items: center;
-      gap: 5px;
-      text-decoration: none;
-      font-weight: bold;
-    }
-
-    .actions .delete {
-      color: red;
-    }
-
-    .actions .edit {
-      color: #5357b6;
-    }
-
-    .action-icon {
-      width: 18px;
-      height: 30px;
-    }
-
-    .reply {
-      margin-left: 50px;
-      padding-left: 20px;
-      border-left: 2px solid #ddd;
-    }
-
-    .tag {
-      color: #5357b6;
-      font-weight: bold;
-    }
-
-    .you-badge {
-      background: #5357b6;
-      color: white;
-      padding: 2px 6px;
-      border-radius: 4px;
-      font-size: 12px;
-    }
-
-    .add-comment {
-      display: flex;
-      gap: 10px;
-      background: #fff;
-      padding: 15px;
-      border-radius: 10px;
-      margin-top: 20px;
-    }
-
-    .add-comment input {
-      flex: 1;
-      padding: 10px;
-    }
-
-    .add-comment button {
-      background: #5357b6;
-      color: white;
-      border: none;
-      padding: 10px 16px;
-      border-radius: 6px;
-      cursor: pointer;
-    }
-  </style>
+        .highlight{
+            background-color: rgb(238, 15, 108);
+            padding: 10px;
+        }
+    </style>
 </head>
-
 <body>
+    <input type="text" id="name" class="input">
+    <button id="btn" class="button">Show</button>
+    <p id="result"></p>
 
-<div class="container">
+    <input type="text" id="username" class="input">
+    <button id="greetBtn" class="button">Greet</button>
+    <p id="message"></p>
 
-  <div class="comment">
-    <div class="votes"><button>+</button><span>12</span><button>-</button></div>
-    <div class="avatar"><img src="https://i.pravatar.cc/40?img=1"></div>
-    <div class="content">
-      <div class="header">
-        <strong>amyrobson</strong>
-        <span class="time">1 month ago</span>
-        <a href="#">Reply</a>
-      </div>
-      <p>Impressive! Though it seems the drag feature could be improved. But overall it looks incredible. You've nailed the design and the responsiveness at various breakpoints works really well.</p>
-    </div>
-  </div>
 
-  <div class="comment">
-    <div class="votes"><button>+</button><span>5</span><button>-</button></div>
-    <div class="avatar"><img src="https://i.pravatar.cc/40?img=2"></div>
-    <div class="content">
-      <div class="header">
-        <strong>maxblagun</strong>
-        <span class="time">2 weeks ago</span>
-        <a href="#">Reply</a>
-      </div>
-      <p>Woah, your project looks awesome!How long have you been coding for? I'm still new, but think I want to dive into React as well soon. Perhaps you can give me an insight on where I can learn React? Thanks!</p>
-    </div>
-  </div>
+    <input type="text" id="text" class="input">
+    <button id="button" class="button">Send</button>
+    <p id="output"></p>
 
-  <div class="reply">
-    <div class="comment">
-      <div class="votes"><button>+</button><span>4</span><button>-</button></div>
-      <div class="avatar"><img src="https://i.pravatar.cc/40?img=3"></div>
-      <div class="content">
-        <div class="header">
-          <strong>ramsesmiron</strong>
-          <span class="time">1 week ago</span>
-          <a href="#">Reply</a>
-        </div>
-        <p><span class="tag">@maxblagun</span> If you're still new, I'd recommend focusing on the fundamentals of HTML, CSS, and JS before considering React. It's very tempting to jump ahead but lay a solid foundation first.</p>
-      </div>
-    </div>
-  </div>
 
-  <div class="reply">
-    <div class="comment">
-      <div class="votes"><button>+</button><span>2</span><button>-</button></div>
-      <div class="avatar"><img src="https://i.pravatar.cc/40?img=4"></div>
-      <div class="content">
-        <div class="header">
-          <strong>juliusomo</strong>
-          <span class="you-badge">you</span>
-          <span class="time">2 days ago</span>
-          <div class="actions">
-            <a class="delete" href="#"><img src="delete.jpg" alt="Delete Icon" class="action-icon"> Delete</a>
-            <a class="edit" href="#"><img src="edit.jpg" alt="Edit Icon" class="action-icon"> Edit</a>
-          </div>
-        </div>
-        <p><span class="tag">@ramsesmiron</span>I couldn't agree more with this. Everything moves so fast and it always seems like everyone knows the newest library/ framework. But the fundamentals are what stay constant.</p>
-      </div>
-    </div>
-  </div>
 
-  <div class="add-comment">
-    <div class="avatar"><img src="https://i.pravatar.cc/40?img=5"></div>
-    <input type="text" placeholder="Add a comment...">
-    <button>SEND</button>
-  </div>
+   <input type="text" id="liveInput" class="input">
+   <p id="preview"></p>
 
-</div>
 
-<script>
-  const votes = document.querySelectorAll('.votes');
-  for (let v of votes) {
-    const [plus, count, minus] = v.children;
-    plus.onclick = () => count.textContent++;
-    minus.onclick = () => count.textContent > 0 && count.textContent--;
-  }
-</script>
+   <input type="text" id="text1" class="input">
+   <p class="length">Length: <span id="count">0</span></p>
+
+
+
+   <input type="text" id="input1" class="input">
+   <button id="button2" disabled >Send</button>
+
+
+
+
+   <input type="number" id="numInput" class="input">
+   <button id="btn3" class="button">Double</button>
+   <p id="result1"></p>
+
+
+   <form id="myForm">
+    <input type="text" id="name1" class="input">
+    <button class="button">Send</button>
+   </form>
+   <p id="result2"></p>
+
+
+   <form id="form2">
+        <input type="text" id="name2" class="input">
+        <button class="button">Send</button>
+    </form>
+    <p id="message2" class="length"></p>
+
+
+    <form id="form1">
+    <input type="text" id="name2" placeholder="Name" class="input">
+    <input type="number" id="age" placeholder="Age" class="input">
+    <button class="button">Send</button>
+ </form>
+<p id="result3"></p>
+
+
+
+<input type="checkbox" id="agree" >
+<label for="agree" class="length">I agree</label>
+<p id="result5" class="length"></p>
+
+
+<input type="radio" name="gender" id="male" value="Male">
+<label for="male"  class="length">Male</label>
+<input type="radio" name="gender" id="female" value="Female">
+<label for="female" class="length">Female</label>
+<button id="btn5" class="button">Show</button>
+<p id="result6"></p>
+
+
+
+ <label>
+        <input type="checkbox" id="agree">
+        I agree
+    </label>
+
+    <p id="resultt" class="message"></p>
+
+
+
+
+
+<div id="box" class="input">Important message</div>
+<button id="btnn" class="button" style="margin-top:10px;">Highlight</button>
+
+
+    <script src="cw.js"></script>
+
 </body>
 </html>
+
