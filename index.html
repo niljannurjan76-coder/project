@@ -1,66 +1,263 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <style>
-    /* .active { color: red;
-} */
+  <meta charset="UTF-8">
+  <title>Sneakers Shop</title>
 
-.active {
-background-color: black;
-color: white;
-}
-    </style>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      background: #fff;
+      color: #222;
+    }
+
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 60px;
+      border-bottom: 1px solid #eee;
+      margin-left: 100px;
+    }
+
+    .header-left {
+      display: flex;
+      align-items: center;
+    }
+
+    .logo {
+      font-size: 22px;
+      font-weight: bold;
+      margin-right: 40px;
+    }
+
+    nav a {
+      margin-right: 20px;
+      text-decoration: none;
+      color: #555;
+    }
+
+    .header-right {
+      display: flex;
+      align-items: center;
+      gap: 25px;
+      margin-top: 12px;
+    }
+
+    .cart-icon {
+      width: 24px;
+      height: 24px;
+      background: #ddd;
+      border-radius: 4px;
+    }
+
+    .profile {
+      width: 40px;
+      height: 40px;
+      background: #ddd;
+      border-radius: 50%;
+      overflow: hidden;
+    }
+
+    .product {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 50px;
+      padding: 40px 0;
+    }
+
+    .images {
+      width: 360px;
+    }
+
+    .main-image {
+      width: 330px;
+      height: 300px;
+      background: #f2f2f2;
+      border-radius: 12px;
+    }
+
+    .thumbnails {
+      display: flex;
+      gap: 15px;
+      margin-top: 20px;
+    }
+
+    .thumb {
+      width: 70px;
+      height: 70px;
+      background: #f2f2f2;
+      border-radius: 8px;
+    }
+
+    .info {
+      width: 420px;
+    }
+
+    .company {
+      color: rgb(150, 148, 144);
+      font-size: 12px;
+      letter-spacing: 1px;
+      margin-bottom: 10px;
+    }
+
+    .info h1 {
+      font-size: 36px;
+      margin-bottom: 20px;
+    }
+
+    .desc {
+      color: #666;
+      line-height: 1.6;
+      margin-bottom: 20px;
+    }
+
+    .price {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .current {
+      font-size: 24px;
+      font-weight: bold;
+    }
+
+    .discount {
+      background: #000000;
+      color: rgb(255, 255, 255);
+      padding: 4px 8px;
+      border-radius: 6px;
+      font-size: 14px;
+    }
+
+    .old {
+      color: #aaa;
+      text-decoration: line-through;
+      margin: 10px 0 25px;
+    }
+
+    .cart {
+      display: flex;
+      gap: 20px;
+      align-items: center;
+    }
+
+    .counter {
+      display: flex;
+      align-items: center;
+      background: #f7f7f7;
+      padding: 10px;
+      border-radius: 8px;
+    }
+
+    .counter button {
+      background: none;
+      border: none;
+      font-size: 20px;
+      width: 30px;
+      cursor: pointer;
+    }
+
+    #count {
+      margin: 0 10px;
+      font-weight: bold;
+    }
+
+    .add {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      background: rgb(255, 132, 1);
+      border: none;
+      color: white;
+      padding: 12px 26px;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+
+    .add-icon {
+      width: 18px;
+      height: 18px;
+      background: rgba(255,255,255,0.7);
+      border-radius: 4px;
+    }
+  </style>
 </head>
 <body>
-    <!-- <button class="btn">Apple</button>
-    <button class="btn">Nike</button>
-    <button class="btn">Starbucks</button>
-    <p id="result">---</p> -->
 
-    <!-- <p class="text">Hello</p>
-    <p class="text">World</p>
-    <p class="text">JS</p> -->
+<header class="header">
 
+  <div class="header-left">
+    <div class="logo">sneakers</div>
+    <nav>
+      <a href="#">Collections</a>
+      <a href="#">Men</a>
+      <a href="#">Women</a>
+      <a href="#">About</a>
+      <a href="#">Contact</a>
+    </nav>
+  </div>
 
-    <!-- <button class="tab">Home</button>
-    <button class="tab">About</button>
-    <button class="tab">Contact</button> -->
+  <div class="header-right">
+    <div class="cart-icon"><img src="korzinka white.jpg" width="25px"></div>
+    <div class="profile"><img src="image-avatar.png" width="45px"></div>
+  </div>
 
+</header>
 
-    <!-- <button id="minus">-</button>
-    <span id="count">0</span>
-    <button id="plus">+</button> -->
-   
-    
-    <!-- <button id="minus">-</button>
-    <span id="count">0</span>
-    <button id="plus">+</button>
-    <button id="reset">reset</button> -->
+<main class="product">
 
+  <div class="images">
+    <div class="main-image"><img src="image-product-1.jpg" width="330px" height="300px" style="border-radius: 8px;"></div>
 
-    <div class="counter">
-        <button class="minus1">-</button>
-        <span id="count1">0</span>
-        <button class="plus1">+</button>
-        </div>
-        <div class="counter">
-        <button class="minus2">-</button>
-        <span id="count2">0</span>
-        <button class="plus2">+</button>
-        </div>
-        <div class="counter">
-        <button class="minus3">-</button>
-        <span id="count3">0</span>
-        <button class="plus3">+</button>
-        </div>
-        <hr>
-        <p>Total: <span id="total">0</span></p>
-        <form id="form">
-        <button id="submit">Submit</button>
-        </form>
-    <script src="js.js"></script>
+    <div class="thumbnails">
+      <div class="thumb"><img src="асты 1.jpg" width="70px" style="border-radius: 7px; border: 2px solid rgba(255, 117, 4, 0.842); opacity: 0.4; "></div>
+      <div class="thumb"><img src="асты22.jpg" width="70px" style="border-radius: 7px;"></div>
+      <div class="thumb"><img src="асты 3.jpg" width="70px" style="border-radius: 7px;"></div>
+      <div class="thumb"><img src="асты 4.jpg" width="70px" style="border-radius: 7px;"></div>
+    </div>
+  </div>
+
+  <div class="info">
+    <p class="company">SNEAKER COMPANY</p>
+    <h1>Fall Limited Edition Sneakers</h1>
+
+    <p class="desc">
+      These low-profile sneakers are your perfect casual wear companion.
+      Featuring a durable rubber outer sole,they'll withstand everything the weather can offer
+    </p>
+
+    <div class="price">
+      <span class="current">$125.00</span>
+      <span class="discount">50%</span>
+    </div>
+    <p class="old">$250.00</p>
+
+    <div class="cart">
+      <div class="counter">
+        <button id="minus">−</button>
+        <span id="count">0</span>
+        <button id="plus">+</button>
+      </div>
+
+      <button class="add">
+        <div class="add-icon"><img src="korzinka orange.jpg" width="18px"></div>
+        Add to cart
+      </button>
+    </div>
+  </div>
+
+</main>
+
+<script src="js.js"></script>
+
 </body>
 </html>
