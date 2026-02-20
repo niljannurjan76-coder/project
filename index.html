@@ -1,210 +1,193 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="kk">
 <head>
 <meta charset="UTF-8">
-<title>Student Profile</title>
+<title>Calculator</title>
+
 <style>
-* { box-sizing: border-box; }
 body {
     margin: 0;
-    min-height: 100vh;
-    font-family: Arial, sans-serif;
-    background: linear-gradient(180deg, #001f4d, #003366);
-    color: #ffffff;
+    background: #566387;;
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 20px;
+    height: 100vh;
+    font-family: Arial, sans-serif;
 }
 
-.container {
-    width: 520px;
-    background: rgba(0,0,50,0.9);
+.app {
+    background: #3b4664;
     padding: 25px;
-    border-radius: 15px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    border-radius: 20px;
 }
 
-h1 {
-    text-align: center;
-    margin-bottom: 20px;
-    color: #99ccff;
-}
-
-form label {
-    display: block;
-    margin: 10px 0 5px 0;
-}
-
-input[type="text"], input[type="number"], input[type="email"], input[type="date"], select, textarea {
-    width: 100%;
-    padding: 8px;
-    border-radius: 8px;
-    border: none;
-    margin-bottom: 10px;
-}
-
-textarea {
-    height: 60px;
-    resize: none;
-}
-
-button {
-    width: 100%;
-    padding: 12px;
-    border-radius: 12px;
-    border: none;
-    background: #3399ff;
-    color: white;
-    font-size: 16px;
-    cursor: pointer;
-    margin-top: 10px;
-}
-
-button:hover {
-    background: #66b3ff;
-}
-
-.card {
-    margin-top: 20px;
-    padding: 15px;
-    background: rgba(0,0,80,0.85);
-    border-radius: 12px;
-    display: none;
-}
-
-.skills {
+.top {
     display: flex;
-    flex-direction: column;
-    gap: 6px;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+    margin-bottom: 20px;
 }
 
-.skill-item {
+.top h2 {
+    margin: 0;
+    font-size: 20px;
+}
+
+.theme {
     display: flex;
     align-items: center;
-    gap: 8px;
+    gap: 10px;
 }
 
-.skill-item input[type="checkbox"] { width:auto; margin:0; }
+.theme span {
+    font-size: 12px;
+    letter-spacing: 2px;
+}
+
+.theme-btn {
+    width: 45px;
+    height: 22px;
+    background: #181f32;
+    border-radius: 20px;
+    position: relative;
+    cursor: pointer;
+}
+
+.theme-btn::after {
+    content: "";
+    width: 16px;
+    height: 16px;
+    background: #d03f2f;
+    border-radius: 50%;
+    position: absolute;
+    top: 3px;
+    left: 4px;
+    transition: 0.3s;
+}
+
+.display {
+    background: #181f32;
+    color: white;
+    font-size: 40px;
+    text-align: right;
+    padding: 25px 15px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.calculator {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+    background: #252d44;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.btn {
+    height: 55px;
+    font-size: 22px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    background: #eae3dc;
+    color: #444b5a;
+}
+
+.orange {
+    background: #d03f2f;
+    color: white;
+}
+
+.light {
+    background: #647299;
+    color: white;
+}
+
+.wide {
+    grid-column: span 2;
+}
+
+
+body.theme-active {
+    background: #fcb0c9;
+}
+
+.theme-active .app {
+    background: #fce4ec;
+}
+
+.theme-active .theme-btn::after {
+    left: 24px;
+    background: #c2185b;
+}
+
+.theme-active .display {
+    background: #f06292;
+}
+
+.theme-active .calculator {
+    background: #f06292;
+}
+
+.theme-active .btn {
+    background: #f9d1df;
+    color: #880e4f;
+}
+
+.theme-active .light {
+    background: #ba68c8;
+}
+
+.theme-active .orange {
+    background: #c2185b;
+    color: white;
+}
 </style>
 </head>
+
 <body>
 
-<div class="container">
-<h1>Student Profile</h1>
+<div class="app">
 
-<form id="profileForm">
-
-    <label for="firstName">First Name:</label>
-    <input type="text" id="firstName">
-
-    <label for="lastName">Last Name:</label>
-    <input type="text" id="lastName">
-
-    <label for="age">Age:</label>
-    <input type="number" id="age">
-
-    <label for="dob">Date of Birth:</label>
-    <input type="text" id="dob">
-
-    <label for="english">English Level:</label>
-    <select id="english">
-        <option value="">Choose</option>
-        <option value="Beginner">Beginner</option>
-        <option value="Elementary">Elementary</option>
-        <option value="Pre-Intermediate">Pre-Intermediate</option>
-        <option value="Intermediate">Intermediate</option>
-    </select>
-
-    <p>IT Skills:</p>
-    <div class="skills">
-        <label class="skill-item"><input type="checkbox" id="htmlSkill"> HTML</label>
-        <label class="skill-item"><input type="checkbox" id="cssSkill"> CSS</label>
-        <label class="skill-item"><input type="checkbox" id="jsSkill"> JavaScript</label>
-        <label class="skill-item"><input type="checkbox" id="reactSkill"> Figma</label>
-        <label class="skill-item"><input type="checkbox" id="nodeSkill"> Adobe Photoshop</label>
-        <label class="skill-item"><input type="checkbox" id="pythonSkill"> Coral </label>
+    <div class="top">
+        <h2>calc</h2>
+        <div class="theme">
+            <span>THEME</span>
+            <div class="theme-btn" id="themeBtn"></div>
+        </div>
     </div>
 
-    <label for="email">Email:</label>
-    <input type="email" id="email">
+    <div class="display" id="display">0</div>
 
-    <label for="about">About yourself:</label>
-    <textarea id="about"></textarea>
+    <div class="calculator">
+        <button class="btn" id="btn7">7</button>
+        <button class="btn" id="btn8">8</button>
+        <button class="btn" id="btn9">9</button>
+        <button class="btn light" id="back">DEL</button>
 
-    <label class="skill-item"><input type="checkbox" id="agreeRules"> I have read and understood all the rules</label>
+        <button class="btn" id="btn4">4</button>
+        <button class="btn" id="btn5">5</button>
+        <button class="btn" id="btn6">6</button>
+        <button class="btn" id="plus">+</button>
 
-    <button type="submit" id="btn">Submit Profile</button>
-</form>
+        <button class="btn" id="btn1">1</button>
+        <button class="btn" id="btn2">2</button>
+        <button class="btn" id="btn3">3</button>
+        <button class="btn" id="minus">-</button>
 
-<div class="card" id="resultCard">
-    <h3 id="showName"></h3>
-    <p id="showAge"></p>
-    <p id="showDOB"></p>
-    <p id="showEnglish"></p>
-    <p id="showSkills"></p>
-    <p id="showEmail"></p>
-    <p id="showAbout"></p>
-    <p id="showAgree"></p>
+        <button class="btn" id="btndot">.</button>
+        <button class="btn" id="btn0">0</button>
+        <button class="btn" id="div">/</button>
+        <button class="btn" id="mul">x</button>
+
+        <button class="btn light wide" id="clear">RESET</button>
+        <button class="btn orange wide" id="equal">=</button>
+    </div>
 </div>
 
-<script>
-const profileForm = document.getElementById("profileForm");
-const firstName = document.getElementById("firstName");
-const lastName = document.getElementById("lastName");
-const ageInput = document.getElementById("age");
-const dobInput = document.getElementById("dob");
-const english = document.getElementById("english");
-const email = document.getElementById("email");
-const about = document.getElementById("about");
-const agreeRules = document.getElementById("agreeRules");
-
-const htmlSkill = document.getElementById("htmlSkill");
-const cssSkill = document.getElementById("cssSkill");
-const jsSkill = document.getElementById("jsSkill");
-const reactSkill = document.getElementById("reactSkill");
-const nodeSkill = document.getElementById("nodeSkill");
-const pythonSkill = document.getElementById("pythonSkill");
-
-const showName = document.getElementById("showName");
-const showAge = document.getElementById("showAge");
-const showDOB = document.getElementById("showDOB");
-const showEnglish = document.getElementById("showEnglish");
-const showSkills = document.getElementById("showSkills");
-const showEmail = document.getElementById("showEmail");
-const showAbout = document.getElementById("showAbout");
-const showAgree = document.getElementById("showAgree");
-const resultCard = document.getElementById("resultCard");
-
-profileForm.addEventListener("submit", function(e){
-    e.preventDefault();
-
-    if(!agreeRules.checked){
-        alert("Please confirm that you have read and understood all the rules!");
-        return;
-    }
-
-    showName.textContent = "Name: " + firstName.value + " " + lastName.value;
-    showAge.textContent = "Age: " + ageInput.value;
-    showDOB.textContent = "Date of Birth: " + dobInput.value;
-    showEnglish.textContent = "English Level: " + english.value;
-
-    let skills = "";
-    if(htmlSkill.checked) skills += "HTML ";
-    if(cssSkill.checked) skills += "CSS ";
-    if(jsSkill.checked) skills += "JavaScript ";
-    if(reactSkill.checked) skills += "React ";
-    if(nodeSkill.checked) skills += "Node.js ";
-    if(pythonSkill.checked) skills += "Python ";
-
-    showSkills.textContent = "Skills: " + (skills || "None");
-    showEmail.textContent = "Email: " + email.value;
-    showAbout.textContent = "About: " + about.value;
-    showAgree.textContent = "Confirmed rules: Yes";
-
-    resultCard.style.display = "block";
-});
-</script>
+<script src="js.js"></script>
 
 </body>
 </html>
