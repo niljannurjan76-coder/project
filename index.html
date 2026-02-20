@@ -1,189 +1,436 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Coding Conf 2025</title>
-<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
 
+</head>
 <style>
-* { box-sizing: border-box; margin: 0; padding: 0; }
 
+    /* Task1
+    .btns1{
+        padding:5px;
+        border: none;
+        border-radius: 20px;
+        background-color: rgb(243, 20, 176);
+        color:white;
+        font-family: Playfair;
+    }
+    .tasks{
+        color: rgb(243, 20, 176);
+    } */
+
+
+
+    /* Task2
+     body {
+            margin: 0;
+            font-family: 'Barlow', sans-serif;
+            background-color: #f8f5fc;
+            color: #333;
+        }  */
+
+        /* nav {
+            display: flex;
+            justify-content: center;
+            background-color: #D8BFF1; 
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        nav button {
+            background: none;
+            border: none;
+            color: #fff;
+            padding: 15px 30px;
+            cursor: pointer;
+            font-size: 18px;
+            transition: all 0.3s ease;
+            margin: 0 8px;
+            border-radius: 8px;
+        }
+
+        nav button:hover {
+            background-color: rgba(255,255,255,0.2);
+            transform: translateY(-2px);
+            font-weight: 600;
+        }
+
+        nav button.active {
+            background-color: rgba(255,255,255,0.4);
+            font-weight: 700;
+            box-shadow: inset 0 -3px 0 rgba(255,255,255,0.7);
+        }
+
+        #sections {
+            max-width: 900px;
+            margin: 50px auto;
+            padding: 0 20px;
+        }
+
+        .content {
+            display: none;
+            text-align: center;
+            background-color: #F3EEFA; 
+            padding: 50px 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.08);
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.5s ease;
+        }
+
+        .content.active {
+            display: block;
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        h1 {
+            font-size: 36px;
+            margin-bottom: 20px;
+            color: #6B4DA1;
+        }
+
+        p {
+            font-size: 18px;
+            line-height: 1.6;
+            color: #555;
+        } */
+
+
+/* Task3
 body {
-  min-height: 100vh;
-  font-family: 'JetBrains Mono', monospace;
-  background-image: url("фон.jpg");
-  background-size: cover;        
-  background-position: center;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  overflow: hidden;
+        font-family: 'Arial', sans-serif;
+        background-color: #fff9e6;
+        color: #333;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 50px 20px;
+    }
+
+    h1 {
+        color: #e0c85a;
+    }
+
+    #task-form {
+        display: flex;
+        margin-bottom: 20px;
+    }
+
+    #task-input {
+        padding: 10px;
+        font-size: 16px;
+        border: 2px solid #f3e199;
+        border-radius: 5px 0 0 5px;
+        width: 250px;
+    }
+
+    #add-task {
+        padding: 10px 15px;
+        background-color: #f3e199;
+        border: 2px solid #f3e199;
+        border-left: none;
+        cursor: pointer;
+        font-size: 16px;
+        border-radius: 0 5px 5px 0;
+        transition: background 0.3s;
+    }
+
+    #add-task:hover {
+        background-color: #f7e88f;
+    }
+
+    ul {
+        list-style: none;
+        padding: 0;
+        width: 300px;
+    }
+
+    li {
+        background-color: #fff6cc;
+        padding: 10px;
+        margin-bottom: 10px;
+        border-radius: 5px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        transition: background 0.3s;
+        cursor: pointer;
+    }
+
+    li.completed {
+        text-decoration: line-through;
+        opacity: 0.6;
+        background-color: #fff1b8;
+    }
+
+    .delete-btn {
+        background-color: #f3c74d;
+        border: none;
+        padding: 5px 10px;
+        border-radius: 5px;
+        cursor: pointer;
+        font-weight: bold;
+        transition: background 0.3s;
+    }
+
+    .delete-btn:hover {
+        background-color: #f1b900;
+    } */
+
+
+
+
+
+/* Task4
+    body {
+        font-family: 'Arial', sans-serif;
+        background-color: #fff9e6; 
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        margin: 0;
+    }
+
+    h1 {
+        color: #e0c85a;
+        margin-bottom: 20px;
+    }
+
+    .stars {
+        display: flex;
+        gap: 10px;
+        margin-bottom: 20px;
+    }
+
+    .star {
+        font-size: 50px;
+        color: #ccc;
+        cursor: pointer;
+        transition: color 0.3s, transform 0.2s;
+    }
+
+    .star:hover,
+    .star.hovered {
+        transform: scale(1.2);
+    }
+
+    .star.active {
+        color: #FFD700; 
+    }
+
+    #rating-text {
+        font-size: 20px;
+        font-weight: bold;
+        color: #555;
+    } */
+
+
+
+    body {
+    font-family: Arial, sans-serif;
+    background: #f1fff4; /* очень светлый зелёный */
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
-
-.background-lines {
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-}
-
-.main-wrapper {
-  width: 100%;
-  max-width: 520px;
-  padding: 40px 20px;
-  text-align: center;
-  position: relative;
-  z-index: 2;
-}
-
-.brand {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 10px;
-  margin-bottom: 40px;
-  font-weight: 600;
-}
-
-
 
 h1 {
-  font-size: 38px;
-  line-height: 1.2;
-  margin-bottom: 14px;
-  color:white
+    margin-bottom: 20px;
+    color: #4CAF50; /* мягкий зелёный */
 }
 
-.description {
-  color: #bdb7ff;
-  font-size: 14px;
-  margin-bottom: 40px;
+.language-switcher {
+    margin-bottom: 20px;
 }
 
-.upload-box {
-  border: 2px dashed rgba(255,255,255,0.2);
-  border-radius: 14px;
-  padding: 24px 10px;
-  margin-bottom: 8px;
-  cursor: pointer;
-  transition: 0.3s;
+.language-switcher button {
+    margin: 0 5px;
+    padding: 6px 12px;
+    cursor: pointer;
+    border: 1px solid #b7e4c7;
+    background-color: #b7e4c7;
+    border-radius: 5px;
+    transition: 0.3s;
 }
 
-.upload-box:hover { border-color: #ff7a68; }
-
-.upload-box small {
-  display: block;
-  margin-top: 6px;
-  color: #bdb7ff;
-  font-size: 12px;
+.language-switcher button:hover {
+    background-color: #95d5b2;
 }
 
-label {
-  display: block;
-  text-align: left;
-  margin: 18px 0 6px;
-  font-size: 13px;
-  color: #cfcaff;
+.products {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
-input {
-  width: 100%;
-  background: rgba(255,255,255,0.05);
-  border: 1px solid rgba(255,255,255,0.15);
-  border-radius: 10px;
-  padding: 12px 14px;
-  color: #fff;
-  outline: none;
-  font-family: inherit;
+.card {
+    background: #d8f3dc;
+    padding: 20px;
+    border-radius: 12px;
+    width: 180px;
+    text-align: center;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.08);
+    transition: transform 0.3s;
 }
 
-input::placeholder { color: #9c96d4; }
-
-.submit-btn {
-  width: 100%;
-  margin-top: 26px;
-  background: #ff7a68;
-  border: none;
-  border-radius: 12px;
-  padding: 14px;
-  font-size: 15px;
-  font-weight: 600;
-  cursor: pointer;
-  color: #1b0c36;
-  transition: 0.25s;
+.card:hover {
+    transform: translateY(-5px);
 }
 
-.submit-btn:hover {
-  transform: translateY(-1px);
-  box-shadow: 0 8px 20px rgba(255,122,104,0.3);
+.card button {
+    margin-top: 10px;
+    padding: 6px 12px;
+    border: none;
+    background: #95d5b2;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background 0.3s;
 }
 
-.decor-circle-1, .decor-circle-2, .decor-circle-3 {
-  position: absolute;
-  border: 15px solid rgba(255,122,104,0.6);
-  border-radius: 50%;
-  pointer-events: none;
+.card button:hover {
+    background: #74c69d;
 }
 
-.decor-circle-1 { 
-    width: 520px;
-    height: 460px; 
-    bottom: -80px; 
-    left: -130px;}
-.decor-circle-2 { 
-    width: 600px; 
-    height: 460px; 
-    bottom: -280px; 
-    left: 40px; 
-    margin-left: 50px;
-    border-color: rgba(255,122,104,0.35); }
-p,small,h3,h4{
-    color: white;
+#cart {
+    margin-top: 30px;
+    background: #c7f9cc;
+    padding: 20px;
+    border-radius: 12px;
+    width: 300px;
 }
+
+#cart ul {
+    padding: 0;
+    list-style: none;
+}
+
+#cart li {
+    padding: 6px 0;
+    border-bottom: 1px solid #95d5b2;
+}
+
+
 </style>
-</head>
-
 <body>
+    <!-- TASK 1 -->
+    <!-- <div id="colors">
+    <h2 class="tasks">Task 1</h2>
+    <button data-color="beige" class="btns1">Beige</button>
+    <button data-color="pink" class="btns1">Pink</button>
+    <button data-color="lightblue" class="btns1">Light Blue</button>
+    <button data-color="lightyellow" class="btns1">Light Yellow</button> 
+    <br /><br />
+    <button data-color="reset" class="btns1">RESET</button>
+</div> -->
 
-<div class="background-lines"></div>
 
-<div class="decor-circle-1"></div>
-<div class="decor-circle-2"></div>
-<div class="main-wrapper">
 
-  <div class="brand">
-    <div class="brand-icon"><img src="лого норм.jpg" alt="лого" style="width: 30px;"></div>
-    <h4>Coding Conf</h4>
-  </div>
 
-  <h1>Your Journey to Coding Conf 2025 Starts Here!</h1>
-  <p class="description">Secure your spot at next year's biggest coding conference.</p>
 
-  <form class="ticket-form">
 
-    <label>Upload Avatar</label>
-    <div class="upload-box">
-        <img src="загрузки.jpg" style="border-radius: 15px; margin-top: -10px;width:50px;margin-right: px; ">
-        <br />
-        <br />
-      <h3>Drag and drop or click to upload</h3>
-      
-    </div>
-    <small>Upload your photo (JPG or PNG, max size: 500KB).</small>
-    <label>Full Name</label>
-    <input type="text" />
+<!-- TASK 2 -->
+    <!-- <nav>
+        <button data-section="home" class="active">Home</button>
+        <button data-section="portfolio">Portfolio</button>
+        <button data-section="blog">Blog</button>
+        <button data-section="contact">Contact</button>
+    </nav>
 
-    <label>Email Address</label>
-    <input type="email" placeholder="example@email.com" />
+    <div id="sections">
+        <div data-content="home" class="content active">
+            <h1>Welcome to Home</h1>
+            <p>This is the home section of our single-page site.</p>
+        </div>
+        <div data-content="portfolio" class="content">
+            <h1>Portfolio</h1>
+            <p>Here is some of my work and projects.</p>
+        </div>
+        <div data-content="blog" class="content">
+            <h1>Blog</h1>
+            <p>Read my latest articles and thoughts.</p>
+        </div>
+        <div data-content="contact" class="content">
+            <h1>Contact</h1>
+            <p>Get in touch via email or social media.</p>
+        </div>
+    </div> -->
 
-    <label>GitHub Username</label>
-    <input type="text" placeholder="@yourusername" />
 
-    <button class="submit-btn">Generate My Ticket</button>
 
-  </form>
 
+
+
+<!-- TASK3 -->
+<!-- <h1>Task Manager</h1>
+
+<div id="task-form">
+    <input type="text" id="task-input" placeholder="Add a task..." />
+    <button id="add-task">Add</button>
 </div>
 
+<ul id="task-list">
+</ul> -->
+
+
+
+
+
+
+
+
+
+<!-- TASK4 -->
+<!-- <h1>Rate Us</h1>
+<div class="stars">
+    <span class="star" data-rate="1">&#9733;</span>
+    <span class="star" data-rate="2">&#9733;</span>
+    <span class="star" data-rate="3">&#9733;</span>
+    <span class="star" data-rate="4">&#9733;</span>
+    <span class="star" data-rate="5">&#9733;</span>
+</div>
+<div id="rating-text">Your rating: 0</div> -->
+
+
+
+
+
+
+
+<h1 id="main-title">Our Products</h1>
+<div class="language-switcher">
+    <button data-lang="kz">KZ</button>
+    <button data-lang="ru">RU</button>
+    <button data-lang="en">EN</button>
+</div>
+
+<div class="products" id="product-list">
+    <div class="card" data-id="pl" data-name="Phone">
+        <h3 class="product-title">Phone</h3>
+        <p class="product-desc">A cool smartphone.</p>
+        <button>Add to Cart</button>
+    </div>
+    <div class="card" data-id="lp" data-name="Laptop">
+        <h3 class="product-title">Laptop</h3>
+        <p class="product-desc">Powerful and sleek.</p>
+        <button>Add to Cart</button>
+    </div>
+    <div class="card" data-id="tb" data-name="Tablet">
+        <h3 class="product-title">Tablet</h3>
+        <p class="product-desc">Portable and fast.</p>
+        <button>Add to Cart</button>
+    </div>
+</div>
+    <script src="js.js"></script>
 </body>
 </html>
