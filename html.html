@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>INSURE</title>
+<style>
+  * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Georgia', serif;
+  transition: 0.3s;
+}
+
+body {
+  background: #ffffff;
+  color: #2d2b3f;
+}
+
+body.dark-mode {
+  background: #2d2b3f;
+  color: #ffffff;
+}
+
+body.dark-mode header,
+body.dark-mode footer {
+  background: #2d2b3f;
+  color: #ffffff;
+}
+
+body.dark-mode nav a {
+  color: #ffffff;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30px 80px;
+}
+
+.logo {
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+
+nav a {
+  margin-left: 30px;
+  text-decoration: none;
+  color: #2d2b3f;
+  font-size: 14px;
+}
+
+nav .btn {
+  padding: 10px 20px;
+  border: 1px solid #2d2b3f;
+}
+
+nav button {
+  margin-right: 20px;
+  padding: 8px 14px;
+  border: 1px solid #2d2b3f;
+  background: none;
+  cursor: pointer;
+}
+
+.hero {
+  display: flex;
+  background: #2d2b3f;
+  color: white;
+  padding: 80px;
+}
+
+.hero-text {
+  width: 50%;
+  font-size: 25px;
+}
+
+.hero-text h1,
+.hero-text p {
+  margin-bottom: 20px;
+}
+
+.hero-text .btn {
+  display: inline-block;
+  padding: 12px 25px;
+  border: 1px solid white;
+  color: white;
+  text-decoration: none;
+}
+
+.hero-img {
+  width: 50%;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.hero-img img {
+  width: 70%;
+  border-radius: 8px;
+}
+
+.different {
+  padding: 100px 80px;
+  text-align: center;
+}
+
+.different h2 {
+  font-size: 36px;
+  margin-bottom: 60px;
+}
+
+.features {
+  display: flex;
+  justify-content: space-between;
+}
+
+.feature {
+  width: 30%;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.feature img {
+  width: 60px;
+  height: 60px;
+  display: block;
+  margin: 0 auto 20px;
+  border-radius: 50%;
+}
+
+.feature h3 {
+  margin-bottom: 10px;
+}
+
+.feature p {
+  font-size: 14px;
+  color: #777;
+}
+
+.find {
+  margin: 100px 80px;
+  padding: 60px;
+  background: #2d2b3f;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.find h2 {
+  font-size: 32px;
+}
+
+.find .btn {
+  padding: 12px 25px;
+  border: 1px solid white;
+  color: white;
+  text-decoration: none;
+}
+
+footer {
+  padding: 80px;
+  background: #f7f7f7;
+  display: flex;
+  justify-content: space-between;
+}
+
+footer h4 {
+  margin-bottom: 15px;
+}
+
+footer a {
+  display: block;
+  margin-bottom: 10px;
+  text-decoration: none;
+  color: #555;
+  font-size: 14px;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: white;
+  color: #2d2b3f;
+  padding: 40px 60px;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+  z-index: 1000;
+  max-width: 400px;
+  text-align: center;
+}
+
+.modal h3 {
+  margin-bottom: 15px;
+}
+
+.modal p {
+  font-size: 14px;
+  color: #555;
+}
+
+.modal .close-btn {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 8px 16px;
+  border: 1px solid #2d2b3f;
+  cursor: pointer;
+}
+
+.overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.4);
+  z-index: 900;
+}
+.socials {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 15px;
+}
+
+.socials a img {
+  width: 28px;
+  height: 28px;
+  object-fit: contain;
+  transition: transform 0.3s, opacity 0.3s;
+}
+.socials a img:hover {
+  transform: scale(1.2);
+  opacity: 0.8;
+}
+
+</style>
+</head>
+<body>
+
+<header>
+  <div class="logo">INSURE</div>
+  <nav>
+    <button id="themeToggle">Theme</button>
+    <a href="#" id="btnHow">HOW WE WORK</a>
+    <a href="#" id="btnView" class="btn">VIEW PLANS</a>
+  </nav>
+</header>
+
+<section class="hero" id="hero">
+  <div class="hero-text">
+    <h1 id="heroH1">Humanizing your insurance.</h1>
+    <p id="heroP">Get your life insurance coverage easier and faster. We blend our expertise and technology to help you find the plan that’s right for you.</p>
+    <a href="#" class="btn" id="heroBtn">VIEW PLANS</a>
+  </div>
+  <div class="hero-img">
+    <img src="cw0602.jpg" alt="family image">
+  </div>
+</section>
+
+<section class="different">
+  <h2>We’re different</h2>
+  <div class="features">
+    <div class="feature" data-title="Snappy Process" data-text="Our application process can be completed in minutes.">
+      <img src="молния 06.jpg" alt="Snappy Process">
+      <h3>Snappy Process</h3>
+      <p>Our application process can be completed in minutes.</p>
+    </div>
+    <div class="feature" data-title="Affordable Prices" data-text="We don’t want you worrying about high monthly costs.">
+      <img src="деньгиқ,.jpg" alt="Affordable Prices">
+      <h3>Affordable Prices</h3>
+      <p>We don’t want you worrying about high monthly costs.</p>
+    </div>
+    <div class="feature" data-title="People First" data-text="Our plans aren’t full of conditions and clauses.">
+      <img src="профиль06.jpg" alt="People First">
+      <h3>People First</h3>
+      <p>Our plans aren’t full of conditions and clauses.</p>
+    </div>
+  </div>
+</section>
+
+<section class="find" id="find">
+  <h2>Find out more<br>about how we work</h2>
+  <a href="#" class="btn" id="findBtn">HOW WE WORK</a>
+</section>
+
+<footer>
+  <div>
+    <h4>OUR COMPANY</h4>
+    <a href="#">HOW WE WORK</a>
+    <a href="#">WHY INSURE?</a>
+    <a href="#">VIEW PLANS</a>
+    <a href="#">REVIEWS</a>
+  </div>
+  <div>
+    <h4>HELP ME</h4>
+    <a href="#">FAQ</a>
+    <a href="#">TERMS OF USE</a>
+    <a href="#">PRIVACY POLICY</a>
+    <a href="#">COOKIES</a>
+  </div>
+  <div>
+    <h4>CONTACT</h4>
+    <a href="#">SALES</a>
+    <a href="#">SUPPORT</a>
+    <a href="#">LIVE CHAT</a>
+  </div>
+  <div>
+    <h4>OTHERS</h4>
+    <a href="#">CAREERS</a>
+    <a href="#">PRESS</a>
+    <a href="#">LICENSES</a>
+  </div>
+
+  <div class="socials">
+    <a href="#"><img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg" alt="Facebook"></a>
+    <a href="#"><img src="https://upload.wikimedia.org/wikipedia/commons/e/e7/Instagram_logo_2016.svg" alt="Instagram"></a>
+    <a href="#"><img src="https://upload.wikimedia.org/wikipedia/commons/0/08/Pinterest-logo.png" alt="Pinterest"></a>
+  </div>
+</footer>
+
+<div class="overlay"></div>
+<div class="modal" id="modal">
+  <h3 id="modalTitle"></h3>
+  <p id="modalText"></p>
+  <div class="close-btn" id="closeModal">Close</div>
+</div>
+
+<script src="js.js"></script>
+
+</body>
+</html>
