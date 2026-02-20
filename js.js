@@ -1,277 +1,133 @@
-// const btn1 = document.getElementById("btn1");
-// const btn2 = document.getElementById("btn2");
-
-// btn1.addEventListener("click", function() {
-//     btn1.textContent = "Clicked 1";
-// });
-
-// btn2.addEventListener("click", function() {
-//     btn2.textContent = "Clicked 2";
-// });
+// const buttons = document.querySelectorAll(".btn");
+// const result = document.querySelector("#result");
+// buttons.forEach((btn) => {
+// btn. addEventListener("click", () => {
+// result.textContent = btn.textContent;
+// btn.style.color= "yellow";
+// }) ;
+// }) ;
 
 
-
-
-// const cards = document.getElementById("cards");
-
-// cards.addEventListener("click", function(event) {
-// if (event.target.classList.contains("card")) {
-//     event.target.style.background = "rgb(255, 35, 141)"
-// }
+// const texts = document.querySelectorAll(".text");
+// texts. forEach((text) => {
+// text.addEventListener("click", () => {
+// texts.forEach((t) => t.classList.remove("active"));
+// text.classList.add("active");
+// }) ;
 // });
 
 
+// const tabs = document.querySelectorAll(".tab");
+// tabs. forEach((tab) => {
+// tab.addEventListener("click", () => {
+// tabs.forEach((t) => t.classList.remove("active"));
+// tab.classList.add("active");
+// }) ;
+// });
+
+
+// let count = 0;
+// const minusBtn = document.getElementById("minus");
+// const plusBtn = document.getElementById("plus");
+// const countEl = document.getElementById("count");
+// plusBtn.addEventListener("click", () => {
+// count++;
+// countEl.textContent = count;
+// }) ;
+// minusBtn.addEventListener("click", () => {
+//     count--;
+//     countEl.textContent = count;
+// });
 
 
 
-// const list = document.getElementById("list");
 
-// list.addEventListener("click", function(event) {
-//     if (event.target.tagName === "BUTTON") {
-//         event.target.parentElement.remove();
-//     }
+// let count = 0;
+// const minusBtn = document.getElementById("minus");
+// const plusBtn = document.getElementById("plus");
+// const resetBtn = document.getElementById("reset");
+// const countEl = document.getElementById("count");
+// plusBtn.addEventListener("click", () => {
+// count++;
+// countEl.textContent = count;
+// }) ;
+// minusBtn.addEventListener("click", () => {
+//     count--;
+//     countEl.textContent = count;
+// });
+// resetBtn.addEventListener("click", ()=>{
+//     count = 0;
+//     countEl.textContent = count;
 // })
 
 
 
 
 
-
-// const colors = document.getElementById("colors");
-
-// colors.addEventListener("click", function (event) {
-// if (event.target.tagName !== "BUTTON") return;
-// const color = event.target.dataset.color;
-// document.body.style.background = color;
-// });
-
-
-// const table = document.getElementById("table")
-
-// table.addEventListener("click", function(event) {
-//     if(event.target.tagName === "TD") {
-//         event.target.parentElement.style.background = "rgb(255, 35, 141)"
-//     }
-// });
-
-
-
-
-
-
-// const form = document.getElementById("todoForm");
-// const input = document.getElementById("taskInput");
-// const list1 = document.getElementById("list");
-
-// form.addEventListener("submit", function(event) {
-
-//     event.preventDefault();
-
-//     if (input.value === "") return;
-
-//     const li = document.createElement("li");
-
-//     li.textContent = input.value;
-
-//     const btn = document.createElement("button");
-//     btn.textContent = "Delete";
-//     btn.classList.add("delete");
-
-//     li.appendChild(btn);
-
-//     list.appendChild(li);
-
-//     input.value = "";
-// });
-
-// list.addEventListener("click", function(event) {
-//     if (event.target.classList.contains("delete")) {
-//         event.target.parentElement.remove();
-//     }
-// });
-
-
-
-
-
-
-// const openBtn = document.getElementById("openBtn");
-// const closeBtn = document.getElementById("closeBtn");
-// const modal = document.getElementById("modal");
-
-// openBtn.addEventListener("click" , function(){
-//     modal.classList.add("show");
-// })
-
-// closeBtn.addEventListener("click" , function() {
-//     modal.classList.remove("show")
-// });
-
-
-
-// const openBtn = document.getElementById("openBtn");
-// const modal = document.getElementById("modal");
-// const closeBtn = document.getElementById("close");
-
-// function openModal() {
-//     modal.classList.add("show");
-//     document.body.classList.add("no-scroll");
-// }
-
-// function closeModal() {
-//     modal.classList.remove("show");
-//     document.body.classList.remove("no-scroll");
-// }
-
-// openBtn.addEventListener("click", openModal);
-// closeBtn.addEventListener("click" , closeModal);
-
-// modal.addEventListener("click" , function(event) {
-//     if(event.target === modal) {
-//         closeModal();
-//     }
-// });
-
-// document.addEventListener("keydown" , function(event) {
-//     if(event.key === "Escape"){
-//         closeModal();
-//     }
-// });
-
-
-
-// const menu = document.getElementById("menu");
-// const pages = document.querySelectorAll(".page");
-
-// menu.addEventListener("click", function(event) {
-
-//   if (event.target.tagName === "LI") {
-    
-//     // Барлық мәзір элементтерінен "active" класын алып тастау
-//     document.querySelectorAll("#menu li").forEach(function(item) {
-//       item.classList.remove("active");
-//     });
-
-//     // Басылған элементке "active" класын қосу
-//     event.target.classList.add("active");
-
-//     const pageName = event.target.dataset.page;
-
-//     // Барлық беттерден "active-page" класын алып тастау және керегін қосу
-//     pages.forEach(function(section) {
-//       section.classList.remove("active-page");
-
-//       if (section.dataset.content === pageName) {
-//         section.classList.add("active-page");
-//       }
-//     });
-
-//   }
-
-// });
-
-
-
-
-
-// 19.02.2026
-
-// const students = [
-//     {name: "Ali", course:1},
-//     {name: "Dana", course:2},
-//     {name: "Aruzhan", course:1}
-// ];
-
-// const list = document.querySelector("#list");
-// const btn = document.querySelector("#btn");
-
-// function render(arr){
-//     list.innerHTML = "";
-
-//     arr.forEach(function(student){
-//         list.innerHTML += `
-//             <li>
-//                 ${student.name} - Course: ${student.course}
-//             </li>
-//         `;
-//     });
-// }
-
-// render(students);
-
-// btn.addEventListener("click", function() {
-//     const filtered = students.filter(function(student){
-//         return student.course === 1;
-//     });
-//     render(filtered);
-// });
-
-
-
-
-
-// const students = ["Aarav", "Vivaan", "Aditya", "Vihaan", "Arjun",
-// "Reyansh", "Muhammad", "Sai", "Arnav", "Ayaan",
-// "Krishna", "Ishaan", "Shaurya", "Atharv", "Dhruv",
-// "Rohan", "Kabir", "Kian", "Rudra", "Aryan",
-// "Anaya", "Diya", "Aadhya", "Myra", "Anika",
-// "Ira", "Sara", "Pari", "Riya", "Navya",
-// "Meera", "Saanvi", "Ishita", "Kavya", "Avni",
-// "Priya", "Simran", "Tanvi", "Radhika", "Sneha",
-// "Arushi", "Pooja", "Nisha", "Neha", "Lakshmi",
-// "Anjali", "Shruti", "Kiran", "Varun", "Rahul"];
-// const list = document.querySelector("#list");
-// const search = document.querySelector("#search");
-
-// function render(arr) {
-//     list.innerHTML = "";
-//     arr.forEach(function(name) {
-//         list.innerHTML += `<li>${name}</li>`;
-//     });
-// }
-
-// render(students);
-
-// search.addEventListener("input", function() {
-//     const value = search.value.toLowerCase();
-//     const filtered = students.filter(function(name) {
-//         return name.toLowerCase().includes(value);
-//     });
-//     render(filtered);
-// });
-
-
-
-
-
-// const students = ["Ali", "Dana", "Aruzhan", "Nursultan", "Madi", "Aigerim"];
-// let current = [...students];
-
-// const list = document.querySelector("#list");
-// const azBtn = document.querySelector("#az");
-// const zaBtn = document.querySelector("#za");
-// const resetBtn = document.querySelector("#reset");
-
-// function render(arr) {
-//     list.innerHTML = "";
-//     arr.forEach(name => {
-//         list.innerHTML += `<li>${name}</li>`;
-//     });
-// }
-
-// render(current);
-
-// azBtn.addEventListener("click", function() {
-//     current = [...students].sort();
-//     render(current);
-// });
-
-// zaBtn.addEventListener("click", function() {
-//     current = [...students].sort().reverse();
-//     render(current);
-// });
-
-// resetBtn.addEventListener("click", function() {
-//     current = [...students];
-//     render(current);
-// });
+let count1 = 0;
+let count2 = 0;
+let count3 = 0;
+
+const countEl1 = document.getElementById("count1");
+const countEl2 = document.getElementById("count2");
+const countEl3 = document.getElementById("count3");
+const totalEl = document.getElementById("total");
+const submitBtn = document.getElementById("submit");
+const form = document.getElementById("form");
+
+function updateTotal() {
+  const total = count1 + count2 + count3;
+  totalEl.textContent = total;
+  submitBtn.disabled = total === 0;
+}
+
+/* Counter 1 */
+document.querySelector(".plus1").addEventListener("click", () => {
+  count1++;
+  countEl1.textContent = count1;
+  updateTotal();
+});
+
+document.querySelector(".minus1").addEventListener("click", () => {
+  if (count1 > 0) {
+    count1--;
+  }
+  countEl1.textContent = count1;
+  updateTotal();
+});
+
+/* Counter 2 */
+document.querySelector(".plus2").addEventListener("click", () => {
+  count2++;
+  countEl2.textContent = count2;
+  updateTotal();
+});
+
+document.querySelector(".minus2").addEventListener("click", () => {
+  if (count2 > 0) {
+    count2--;
+  }
+  countEl2.textContent = count2;
+  updateTotal();
+});
+
+/* Counter 3 */
+document.querySelector(".plus3").addEventListener("click", () => {
+  count3++;
+  countEl3.textContent = count3;
+  updateTotal();
+});
+
+document.querySelector(".minus3").addEventListener("click", () => {
+  if (count3 > 0) {
+    count3--;
+  }
+  countEl3.textContent = count3;
+  updateTotal();
+});
+
+/* Submit */
+form.addEventListener("submit", (event) => {
+  event.preventDefault();
+  alert("Form submitted!");
+});
