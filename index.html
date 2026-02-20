@@ -1,13 +1,189 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Coding Conf 2025</title>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  min-height: 100vh;
+  font-family: 'JetBrains Mono', monospace;
+  background-image: url("фон.jpg");
+  background-size: cover;        
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.background-lines {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.main-wrapper {
+  width: 100%;
+  max-width: 520px;
+  padding: 40px 20px;
+  text-align: center;
+  position: relative;
+  z-index: 2;
+}
+
+.brand {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 40px;
+  font-weight: 600;
+}
+
+
+
+h1 {
+  font-size: 38px;
+  line-height: 1.2;
+  margin-bottom: 14px;
+  color:white
+}
+
+.description {
+  color: #bdb7ff;
+  font-size: 14px;
+  margin-bottom: 40px;
+}
+
+.upload-box {
+  border: 2px dashed rgba(255,255,255,0.2);
+  border-radius: 14px;
+  padding: 24px 10px;
+  margin-bottom: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.upload-box:hover { border-color: #ff7a68; }
+
+.upload-box small {
+  display: block;
+  margin-top: 6px;
+  color: #bdb7ff;
+  font-size: 12px;
+}
+
+label {
+  display: block;
+  text-align: left;
+  margin: 18px 0 6px;
+  font-size: 13px;
+  color: #cfcaff;
+}
+
+input {
+  width: 100%;
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.15);
+  border-radius: 10px;
+  padding: 12px 14px;
+  color: #fff;
+  outline: none;
+  font-family: inherit;
+}
+
+input::placeholder { color: #9c96d4; }
+
+.submit-btn {
+  width: 100%;
+  margin-top: 26px;
+  background: #ff7a68;
+  border: none;
+  border-radius: 12px;
+  padding: 14px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  color: #1b0c36;
+  transition: 0.25s;
+}
+
+.submit-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 8px 20px rgba(255,122,104,0.3);
+}
+
+.decor-circle-1, .decor-circle-2, .decor-circle-3 {
+  position: absolute;
+  border: 15px solid rgba(255,122,104,0.6);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.decor-circle-1 { 
+    width: 520px;
+    height: 460px; 
+    bottom: -80px; 
+    left: -130px;}
+.decor-circle-2 { 
+    width: 600px; 
+    height: 460px; 
+    bottom: -280px; 
+    left: 40px; 
+    margin-left: 50px;
+    border-color: rgba(255,122,104,0.35); }
+p,small,h3,h4{
+    color: white;
+}
+</style>
 </head>
+
 <body>
-    <h1>HOME WORK</h1>
+
+<div class="background-lines"></div>
+
+<div class="decor-circle-1"></div>
+<div class="decor-circle-2"></div>
+<div class="main-wrapper">
+
+  <div class="brand">
+    <div class="brand-icon"><img src="лого норм.jpg" alt="лого" style="width: 30px;"></div>
+    <h4>Coding Conf</h4>
+  </div>
+
+  <h1>Your Journey to Coding Conf 2025 Starts Here!</h1>
+  <p class="description">Secure your spot at next year's biggest coding conference.</p>
+
+  <form class="ticket-form">
+
+    <label>Upload Avatar</label>
+    <div class="upload-box">
+        <img src="загрузки.jpg" style="border-radius: 15px; margin-top: -10px;width:50px;margin-right: px; ">
+        <br />
+        <br />
+      <h3>Drag and drop or click to upload</h3>
+      
+    </div>
+    <small>Upload your photo (JPG or PNG, max size: 500KB).</small>
+    <label>Full Name</label>
+    <input type="text" />
+
+    <label>Email Address</label>
+    <input type="email" placeholder="example@email.com" />
+
+    <label>GitHub Username</label>
+    <input type="text" placeholder="@yourusername" />
+
+    <button class="submit-btn">Generate My Ticket</button>
+
+  </form>
+
+</div>
+
 </body>
-<script src="video.js"></script>
 </html>
