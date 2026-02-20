@@ -2,139 +2,191 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Random Generator World</title>
+<title>Typing Speed Test</title>
 
 <style>
-*{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
-  font-family: 'Segoe UI', sans-serif;
+* {
+  box-sizing: border-box;
 }
 
-body{
-  height:100vh;
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  transition:0.6s;
-  background:linear-gradient(135deg,#667eea,#764ba2);
+body {
+  margin: 0;
+  background: radial-gradient(circle at top, #1a1a1a, #050505);
+  font-family: Inter, Arial, sans-serif;
+  color: #cfcfcf;
 }
 
-.container{
-  background:white;
-  padding:50px;
-  border-radius:25px;
-  text-align:center;
-  width:500px;
-  max-width:90%;
-  box-shadow:0 30px 60px rgba(0,0,0,0.2);
-  animation:fadeIn 1s ease;
+.app {
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 24px 32px;
 }
 
-h1{
-  margin-bottom:20px;
-  font-size:32px;
+.top-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
-.emoji{
-  font-size:60px;
-  margin:20px 0;
-  transition:0.4s;
+.title {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  margin-left: 40px;
 }
 
-.quote{
-  font-size:18px;
-  margin:20px 0;
-  min-height:50px;
+.title h1 {
+  font-size: 22px;
+  margin: 0;
+  color: #fff;
+  
 }
 
-.number{
-  font-size:40px;
-  font-weight:bold;
-  margin:20px 0;
+.subtitle {
+  font-size: 13px;
+  color: #888;
+  margin-left: 75px;
 }
 
-button{
-  padding:12px 25px;
-  border:none;
-  border-radius:12px;
-  background:#111827;
-  color:white;
-  font-size:16px;
-  cursor:pointer;
-  transition:0.3s;
+.best {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: #e5e5e5;
+  font-size: 14px;
 }
 
-button:hover{
-  transform:scale(1.1);
-  background:#2563eb;
+.stats {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  margin-top: 20px;
+  font-size: 18px;
 }
 
-@keyframes fadeIn{
-  from{opacity:0; transform:translateY(15px);}
-  to{opacity:1; transform:translateY(0);}
+.stat strong {
+  color: #fff;
+}
+
+.stat .red {
+  color: #ef4444;
+  font-weight: bold;
+}
+
+.stat .yellow {
+  color: #facc15;
+}
+
+.controls {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-left: auto;
+}
+
+.label {
+  font-size: 14px;
+  color: #999;
+}
+
+.btn {
+  padding: 6px 14px;
+  border-radius: 8px;
+  border: 1px solid #333;
+  background: transparent;
+  color: #aaa;
+  font-size: 14px;
+}
+
+.btn.active {
+  border-color: #3b82f6;
+  color: #3b82f6;
+}
+
+.divider {
+  margin: 22px 0;
+  height: 1px;
+  background: linear-gradient(to right, transparent, #333, transparent);
+}
+
+.text-area {
+  font-size: 34px;
+  line-height: 1.5;
+  letter-spacing: 0.3px;
+}
+
+.correct {
+  color: #22c55e;
+}
+
+.current {
+  color: #ef4444;
+  text-decoration: underline;
+}
+
+.remaining {
+  color: #7a7a7a;
+}
+img{
+    margin-top: 70px;
 }
 </style>
 </head>
+
 <body>
 
-<div class="container">
-  <h1>🎲 Random Universe</h1>
-  
-  <div class="emoji" id="emoji">😎</div>
-  
-  <div class="quote" id="quote">
-    Press the button to generate something random!
+<div class="app">
+  <div class="top-bar">
+    <div>
+      <div class="title">
+        <h1><img src="logo cw.png">Typing Speed Test</h1>
+      </div>
+      <div class="subtitle">Type as fast as you can in 60 seconds</div>
+    </div>
+
+    <div class="best">
+      🏆 Personal best: <strong>92 WPM</strong>
+    </div>
   </div>
-  
-  <div class="number" id="number">0</div>
-  
-  <button onclick="generate()">Generate Random</button>
+
+  <div style="display:flex; align-items:center; gap:30px; margin-top:18px;">
+    <div class="stats">
+      <div class="stat">WPM: <strong>40</strong></div>
+      <div class="stat">Accuracy: <span class="red">94%</span></div>
+      <div class="stat">Time: <span class="yellow">0:46</span></div>
+    </div>
+
+    <div class="controls">
+      <span class="label">Difficulty:</span>
+      <button class="btn">Easy</button>
+      <button class="btn">Medium</button>
+      <button class="btn active">Hard</button>
+
+      <span class="label">Mode:</span>
+      <button class="btn active">Timed (60s)</button>
+      <button class="btn">Passage</button>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="text-area">
+    <span class="correct">
+      The archaeological expedition unearthed artifacts that complicated
+      prevailing theories about Bronze Age trade
+    </span>
+    <span class="current"> networks.</span>
+    <span class="remaining">
+      Obsidian from Anatolia, lapis lazuli from Afghanistan, and amber from
+      the Baltic—all discovered in a single Mycenaean tomb—suggested
+      commercial connections far more extensive than previously hypothesized.
+      "We've underestimated ancient peoples' navigational capabilities and
+      their appetite for luxury goods," the lead researcher observed.
+      "Globalization isn't as modern as we assume."
+    </span>
+  </div>
+
 </div>
-
-<script>
-const quotes = [
-  "Believe in yourself 🚀",
-  "Today is your lucky day 🍀",
-  "You are unstoppable 💪",
-  "Big things are coming 🔥",
-  "Dream it. Do it. 💎",
-  "Stay positive ✨",
-  "Success is loading... ⏳",
-  "Make it happen ⚡"
-];
-
-const emojis = ["😎","🔥","🚀","💎","⚡","🎯","🌈","👑","🧠","🐱"];
-
-const gradients = [
-  "linear-gradient(135deg,#667eea,#764ba2)",
-  "linear-gradient(135deg,#ff9a9e,#fad0c4)",
-  "linear-gradient(135deg,#43cea2,#185a9d)",
-  "linear-gradient(135deg,#ff512f,#dd2476)",
-  "linear-gradient(135deg,#00c6ff,#0072ff)",
-  "linear-gradient(135deg,#f7971e,#ffd200)"
-];
-
-function generate(){
-  // Random quote
-  const randomQuote = quotes[Math.floor(Math.random() * quotes.length)];
-  document.getElementById("quote").innerText = randomQuote;
-
-  // Random emoji
-  const randomEmoji = emojis[Math.floor(Math.random() * emojis.length)];
-  document.getElementById("emoji").innerText = randomEmoji;
-
-  // Random number
-  const randomNumber = Math.floor(Math.random() * 1000);
-  document.getElementById("number").innerText = randomNumber;
-
-  // Random background
-  const randomBg = gradients[Math.floor(Math.random() * gradients.length)];
-  document.body.style.background = randomBg;
-}
-</script>
 
 </body>
 </html>
