@@ -1,238 +1,286 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Student Management System</title>
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
 <style>
+    * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", sans-serif;
+}
+
 body {
-    margin: 0;
-    font-family: 'Segoe UI', Tahoma, sans-serif;
-    background: linear-gradient(135deg, #e6f4ff, #f0f9ff);
-    display: flex;
-    justify-content: center;
-    padding: 40px 20px;
+  background: #1e1e1e;
+  color: #eaeaea;
+  height: 100vh;
 }
 
-.app {
-    width: 100%;
-    max-width: 950px;
-    background: #ffffff;
-    padding: 30px;
-    border-radius: 18px;
-    box-shadow: 0 15px 35px rgba(0, 119, 255, 0.1);
+
+.top-header {
+  height: 55px;
+  background: #2a2d30;
+  display: flex;
+  align-items: center;
+  padding: 0 20px;
+  gap: 40px;
 }
 
-h2 {
-    text-align: center;
-    margin-bottom: 25px;
-    color: #0077ff;
-    font-weight: 600;
+.top-left {
+  display: flex;
+  align-items: center;
+  gap: 15px;
 }
 
-.row {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 12px;
-    margin-bottom: 25px;
+.logo {
+  letter-spacing: 3px;
+  font-weight: bold;
 }
 
-.row input,
-.row select {
-    padding: 10px 14px;
-    border-radius: 10px;
-    border: 1px solid #cce7ff;
-    background: #f8fcff;
-    outline: none;
-    transition: 0.3s;
-    font-size: 14px;
+.top-doc {
+  font-size: 12px;
+  color: #aaa;
 }
 
-.row input:focus,
-.row select:focus {
-    border-color: #66b3ff;
-    box-shadow: 0 0 0 3px rgba(102, 179, 255, 0.2);
+.doc-name {
+  display: block;
+  color: #fff;
 }
 
-button {
-    padding: 10px 18px;
-    border-radius: 10px;
-    border: none;
-    background: #66b3ff;
-    color: white;
-    cursor: pointer;
-    font-weight: 500;
-    transition: 0.3s;
+.save-btn {
+  margin-left: auto;
+  background: #f97316;
+  border: none;
+  padding: 8px 14px;
+  color: white;
+  border-radius: 4px;
+  cursor: pointer;
 }
 
-button:hover {
-    background: #3399ff;
-    transform: translateY(-2px);
+.main {
+  display: flex;
+  height: calc(100vh - 55px);
 }
 
-#list {
-    list-style: none;
-    padding: 0;
-    margin: 0;
+
+.panel {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  background: #070221; 
+  border-right: 2px solid #656565;
 }
 
-#list li {
-    background: #f5fbff;
-    padding: 15px 18px;
-    border-radius: 14px;
-    margin-bottom: 12px;
-    box-shadow: 0 8px 2
-    0px rgba(0, 140, 255, 0.08);
-    transition: 0.3s;
+.panel:last-child {
+  border-right: none;
 }
 
-#list li:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 12px 25px rgba(0, 140, 255, 0.15);
+.panel-header {
+  height: 45px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+  font-size: 12px;
+  letter-spacing: 2px;
+  color: #aaa;
 }
 
-.info {
-    margin-top: 8px;
+.panel:first-child .panel-header {
+  background: #1d1d1f; 
 }
 
-.badge {
-    display: inline-block;
-    padding: 5px 10px;
-    border-radius: 20px;
-    font-size: 12px;
-    margin-right: 6px;
+.panel:last-child .panel-header {
+  background: #1d1d1f; 
 }
 
-.age-badge {
-    background: #d9f0ff;
-    color: #0077cc;
+
+.editor-text {
+  padding: 20px;
+  color: #cfcfcf;
+  font-size: 14px;
+  line-height: 1.6;
+  white-space: pre-wrap;
+  overflow-y: auto; 
+  flex: 1;
+  scrollbar-width: none; 
 }
 
-.course-badge {
-    background: #cce7ff;
-    color: #005fa3;
+.preview-content {
+  padding: 20px;
+  overflow-y: auto; 
+  flex: 1;
+  padding: 15px;
+  scrollbar-width: none; 
 }
 
-.not-found {
-    text-align: center;
-    color: gray;
+
+
+.preview-content h1 {
+  font-size: 32px;
+  margin-bottom: 10px;
+}
+
+.preview-content h2,
+.preview-content h3 {
+  margin-top: 30px;
+  margin-bottom: 10px;
+}
+
+.preview-content p {
+  color: #b5b5b5;
+  line-height: 1.6;
+  margin-bottom: 10px;
+}
+
+.preview-content li {
+  color: #b5b5b5;
+  line-height: 1.6;
+}
+
+.preview-content ul,
+.preview-content ol {
+  margin-left: 25px;
+}
+
+blockquote {
+  background: #2b2b2b;
+  border-left: 4px solid #f97316;
+  padding: 15px;
+  margin: 20px 0;
+}
+
+a {
+  color:white;
+}
+
+code {
+  background: #333;
+  padding: 2px 6px;
+  border-radius: 4px;
+}
+
+.code-block {
+  background: #2b2b2b;
+  padding: 15px;
+  margin-top: 10px;
+  color: #ddd;
 }
 </style>
-</head>
-
 <body>
+<header class="top-header">
+  <div class="top-left">
+    <span class="burger">☰</span>
+    <span class="logo">MARKDOWN</span>
+  </div>
 
-<div class="app">
-    <h2>Student Management System</h2>
-    
-    <div class="row">
-        <input id="search" type="text" placeholder="Поиск по имени или фамилии..." />
-        <input id="age-filter" type="number" placeholder="Мин. возраст" />
-        <select id="course">
-            <option value="all">Все курсы</option>
-            <option value="1">1 курс</option>
-            <option value="2">2 курс</option>
-            <option value="3">3 курс</option>
-        </select>
-        <select id="sort">
-            <option value="none">Сортировка</option>
-            <option value="az">Имя (A-Z)</option>
-            <option value="za">Имя (Z-A)</option>
-            <option value="age">Сначала младшие</option>
-        </select>
-        <button id="reset">Reset</button>
+  <div class="top-doc">
+    <span class="doc-label">Document Name</span>
+    <span class="doc-name">welcome.md</span>
+  </div>
+
+  <button class="save-btn">Save Changes</button>
+</header>
+
+<div class="main">
+
+  <div class="panel">
+    <div class="panel-header">MARKDOWN</div>
+    <pre class="editor-text">
+# Welcome to Markdown
+
+Markdown is a lightweight markup language that you can use to add formatting elements to plaintext text documents.
+
+## How to use this?
+
+1. Write markdown in the markdown editor window
+2. See the rendered markdown in the preview window
+
+### Features
+
+- Create headings, paragraphs, links, blockquotes, inline-code, code blocks, and lists
+- Name and save the document to access again later
+- Choose between Light or Dark mode depending on your preference
+
+> This is an example of a blockquote. If you would like to learn more about markdown syntax, you can visit this [markdown cheatsheet](https://www.markdownguide.org/cheat-sheet/).
+
+#### Headings
+
+To create a heading, add the hash sign (#) before the heading. The number of number signs you use should correspond to the heading level. You'll see in this guide that we've used all six heading levels (not necessarily in the correct way you should use headings!) to illustrate how they should look.
+
+##### Lists
+
+You can see examples of ordered and unordered lists above.
+
+###### Code Blocks
+
+This markdown editor allows for inline-code snippets, like this: <p>I'm inline</p>. It also allows for larger code blocks like this:
+<p>
+&lt;main&gt;
+  &lt;h1&gt;This is a larger code block&lt;/h1&gt;
+&lt;/main&gt;
+</p>
+    </pre>
+  </div>
+
+  <div class="panel">
+    <div class="panel-header preview-header">
+      <span>PREVIEW</span>
     </div>
 
-    <ul id="list"></ul>
+    <div class="preview-content">
+      <h1>Welcome to Markdown</h1>
+      <p>Markdown is a lightweight markup language that you can use to add formatting elements to plaintext text documents.</p>
+
+      <h2>How to use this?</h2>
+      <ol>
+        <li>Write markdown in the markdown editor window</li>
+        <li>See the rendered markdown in the preview window</li>
+      </ol>
+
+      <h2>Features</h2>
+      <ul>
+        <li>Create headings, paragraphs, links, blockquotes, inline-code, code blocks, and lists</li>
+        <li>Name and save the document to access again later</li>
+        <li>Choose between Light or Dark mode depending on your preference</li>
+      </ul>
+
+      <blockquote>
+        This is an example of a blockquote. If you would like to learn more about markdown syntax,
+        you can visit this <a href="#">markdown cheatsheet</a>
+      </blockquote>
+
+      <h3>Headings</h3>
+      <p>
+        To create a heading, add the hash sign (#) before the heading. The number of number signs you use
+        should correspond to the heading level. You'll see in this guide that we've used all six heading levels
+        (not necessarily in the correct way you should use headings!) to illustrate how they should look.
+      </p>
+
+      <h3>Lists</h3>
+      <p>You can see examples of ordered and unordered lists above.</p>
+
+      <h3 class="code-title">Code Blocks</h3>
+      <p>
+        This markdown editor allows for inline-code snippets, like this:
+        <code>&lt;p&gt;I'm inline&lt;/p&gt;</code>.
+        It also allows for larger code blocks like this:
+      </p>
+
+      <pre class="code-block">
+&lt;main&gt;
+  &lt;h1&gt;This is a larger code block&lt;/h1&gt;
+&lt;/main&gt;
+      </pre>
+    </div>
+  </div>
+
 </div>
 
-<script>
-const students = [
-    { first: "Ali", last: "Khan", age: 19, course: 1 },
-    { first: "Dana", last: "Serikova", age: 21, course: 2 },
-    { first: "Aruzhan", last: "Bolat", age: 18, course: 1 },
-    { first: "John", last: "Smith", age: 22, course: 3 },
-    { first: "Zeynep", last: "Yilmaz", age: 20, course: 2 },
-    { first: "Michael", last: "Brown", age: 23, course: 3 },
-    { first: "Emir", last: "Kaya", age: 19, course: 1 },
-    { first: "Beka", last: "Rakhan", age: 17, course: 2 },
-    { first: "Amir", last: "Wilson", age: 15, course: 3 },
-    { first: "Aidyn", last: "Serikbek", age: 25, course: 3 },
-    { first: "Akberdi", last: "Shailda", age: 17, course: 2 },
-    { first: "Demir", last: "Kaya", age: 18, course: 2 },
-];
-
-const list = document.querySelector("#list");
-const searchInput = document.querySelector("#search");
-const ageInput = document.querySelector("#age-filter");
-const courseSelect = document.querySelector("#course");
-const sortSelect = document.querySelector("#sort");
-const resetBtn = document.querySelector("#reset");
-
-function render(arr) {
-    list.innerHTML = "";
-
-    if (arr.length === 0) {
-        list.innerHTML = "<p class='not-found'>Ничего не найдено</p>";
-        return;
-    }
-
-    arr.forEach(s => {
-        list.innerHTML += `
-            <li>
-                <div>
-                    <strong>${s.first} ${s.last}</strong>
-                </div>
-                <div class="info">
-                    <span class="badge age-badge">Возраст: ${s.age}</span>
-                    <span class="badge course-badge">Курс: ${s.course}</span>
-                </div>
-            </li>
-        `;
-    });
-}
-
-function applyAll() {
-    const searchText = searchInput.value.toLowerCase().trim();
-    const minAge = Number(ageInput.value);
-    const courseValue = courseSelect.value;
-    const sortValue = sortSelect.value;
-
-    let result = students.filter(s => {
-        const fullName = (s.first + " " + s.last).toLowerCase();
-        const matchesSearch = fullName.includes(searchText);
-        const matchesAge = minAge ? s.age >= minAge : true;
-        const matchesCourse = courseValue === "all" || s.course === Number(courseValue);
-        return matchesSearch && matchesAge && matchesCourse;
-    });
-
-    if (sortValue === "az") {
-        result.sort((a, b) => a.first.localeCompare(b.first));
-    } else if (sortValue === "za") {
-        result.sort((a, b) => b.first.localeCompare(a.first));
-    } else if (sortValue === "age") {
-        result.sort((a, b) => a.age - b.age);
-    }
-
-    render(result);
-}
-
-searchInput.addEventListener("input", applyAll);
-ageInput.addEventListener("input", applyAll);
-courseSelect.addEventListener("change", applyAll);
-sortSelect.addEventListener("change", applyAll);
-
-resetBtn.addEventListener("click", () => {
-    searchInput.value = "";
-    ageInput.value = "";
-    courseSelect.value = "all";
-    sortSelect.value = "none";
-    render(students);
-});
-
-render(students);
-</script>
-
+</body>
+</html>
 </body>
 </html>
