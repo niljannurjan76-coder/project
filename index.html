@@ -3,304 +3,137 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Devfinder</title>
-
-<link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<title>Random Generator World</title>
 
 <style>
 *{
   margin:0;
   padding:0;
   box-sizing:border-box;
-  font-family:'Space Mono', monospace;
-  transition:0.3s ease;
+  font-family: 'Segoe UI', sans-serif;
 }
 
 body{
-  background:#141D2F;
-  color:#FFFFFF;
+  height:100vh;
   display:flex;
   justify-content:center;
-  padding:40px 20px;
+  align-items:center;
+  transition:0.6s;
+  background:linear-gradient(135deg,#667eea,#764ba2);
 }
 
 .container{
-  width:100%;
-  max-width:730px;
+  background:white;
+  padding:50px;
+  border-radius:25px;
+  text-align:center;
+  width:500px;
+  max-width:90%;
+  box-shadow:0 30px 60px rgba(0,0,0,0.2);
+  animation:fadeIn 1s ease;
 }
 
-.header{
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  margin-bottom:36px;
+h1{
+  margin-bottom:20px;
+  font-size:32px;
 }
 
-.logo{
-  font-size:26px;
-  font-weight:700;
-}
-
-.theme-toggle{
-  cursor:pointer;
-  font-size:13px;
-  letter-spacing:2px;
-}
-
-.search{
-  background:#1E2A47;
-  padding:10px;
-  border-radius:15px;
-  display:flex;
-  align-items:center;
-  margin-bottom:24px;
-}
-
-.input-wrapper{
-  position:relative;
-  flex:1;
-}
-
-.input-wrapper input{
-  width:100%;
-  background:none;
-  border:none;
-  outline:none;
-  color:inherit;
-  font-size:18px;
-  padding:10px 10px 10px 45px;
-}
-
-.input-icon{
-  position:absolute;
-  left:15px;
-  top:50%;
-  transform:translateY(-50%);
-  width:20px;
-  height:20px;
-}
-
-.search button{
-  background:#0079FF;
-  border:none;
-  padding:14px 28px;
-  border-radius:10px;
-  color:#fff;
-  font-weight:700;
-  cursor:pointer;
-  margin-left:10px;
-}
-
-.card{
-  background:#1E2A47;
-  padding:40px;
-  border-radius:15px;
-  display:flex;
-  gap:37px;
-}
-
-.avatar{
-  width:117px;
-  height:117px;
-  border-radius:50%;
-  background:#0F1624;
-}
-
-.info{
-  flex:1;
-}
-
-.top{
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-}
-
-.name{
-  font-size:26px;
-  font-weight:700;
-}
-
-.username{
-  color:#0079FF;
-  margin-top:4px;
-}
-
-.joined{
-  font-size:15px;
-  opacity:.7;
-}
-
-.bio{
+.emoji{
+  font-size:60px;
   margin:20px 0;
-  opacity:.75;
+  transition:0.4s;
 }
 
-.stats{
-  background:#141D2F;
-  padding:15px 32px;
-  border-radius:10px;
-  display:flex;
-  justify-content:space-between;
-  margin-bottom:25px;
+.quote{
+  font-size:18px;
+  margin:20px 0;
+  min-height:50px;
 }
 
-.stat p:first-child{
-  font-size:13px;
-  opacity:.7;
+.number{
+  font-size:40px;
+  font-weight:bold;
+  margin:20px 0;
 }
 
-.stat p:last-child{
-  font-size:22px;
-  font-weight:700;
-  margin-top:5px;
+button{
+  padding:12px 25px;
+  border:none;
+  border-radius:12px;
+  background:#111827;
+  color:white;
+  font-size:16px;
+  cursor:pointer;
+  transition:0.3s;
 }
 
-.links{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:18px;
-  font-size:15px;
+button:hover{
+  transform:scale(1.1);
+  background:#2563eb;
 }
 
-.link-item{
-  display:flex;
-  align-items:center;
-  gap:12px;
-  opacity:.8;
-}
-
-.link-item img{
-  width:20px;
-}
-
-/* LIGHT MODE */
-.light-mode{
-  background:#F6F8FF;
-  color:#222;
-}
-
-.light-mode .search,
-.light-mode .card{
-  background:#FEFEFE;
-}
-
-.light-mode .stats{
-  background:#F6F8FF;
-}
-
-.light-mode .avatar{
-  background:#E2E5F5;
+@keyframes fadeIn{
+  from{opacity:0; transform:translateY(15px);}
+  to{opacity:1; transform:translateY(0);}
 }
 </style>
 </head>
-
 <body>
 
 <div class="container">
-
-  <div class="header">
-    <div class="logo">devfinder</div>
-    <div class="theme-toggle" id="toggleTheme">LIGHT ☀</div>
+  <h1>🎲 Random Universe</h1>
+  
+  <div class="emoji" id="emoji">😎</div>
+  
+  <div class="quote" id="quote">
+    Press the button to generate something random!
   </div>
-
-  <div class="search">
-    <div class="input-wrapper">
-      <img 
-        class="input-icon" 
-        src="https://cdn-icons-png.flaticon.com/512/622/622669.png"
-      >
-
-      <input type="text" id="searchInput" placeholder="Search GitHub username...">
-    </div>
-    <button id="searchBtn">Search</button>
-  </div>
-
-  <div class="card">
-    <div class="avatar"><img src="octocat.png" style="border-radius:50%;"></div>
-
-    <div class="info">
-      <div class="top">
-        <div>
-          <div class="name" id="name">The Octocat</div>
-          <div class="username" id="username">@octocat</div>
-        </div>
-        <div class="joined">Joined 25 Jan 2011</div>
-      </div>
-
-      <div class="bio">
-        This profile has no bio
-      </div>
-
-      <div class="stats">
-        <div class="stat">
-          <p>Repos</p>
-          <p>8</p>
-        </div>
-        <div class="stat">
-          <p>Followers</p>
-          <p>3938</p>
-        </div>
-        <div class="stat">
-          <p>Following</p>
-          <p>9</p>
-        </div>
-      </div>
-
-      <div class="links">
-        <div class="link-item">
-          <img src="https://cdn-icons-png.flaticon.com/512/684/684908.png">
-          <span>San Francisco</span>
-        </div>
-
-        <div class="link-item">
-          <img src="https://cdn-icons-png.flaticon.com/512/733/733579.png">
-          <span>Not Available</span>
-        </div>
-
-        <div class="link-item">
-          <img src="https://cdn-icons-png.flaticon.com/512/1006/1006771.png
-">
-          <span>https://github.blog</span>
-        </div>
-
-        <div class="link-item">
-          <img src="https://cdn-icons-png.flaticon.com/512/1828/1828479.png">
-          <span>@github</span>
-        </div>
-      </div>
-
-    </div>
-  </div>
-
+  
+  <div class="number" id="number">0</div>
+  
+  <button onclick="generate()">Generate Random</button>
 </div>
 
 <script>
-const toggleBtn = document.getElementById("toggleTheme");
-const body = document.body;
+const quotes = [
+  "Believe in yourself 🚀",
+  "Today is your lucky day 🍀",
+  "You are unstoppable 💪",
+  "Big things are coming 🔥",
+  "Dream it. Do it. 💎",
+  "Stay positive ✨",
+  "Success is loading... ⏳",
+  "Make it happen ⚡"
+];
 
-toggleBtn.addEventListener("click", () => {
-  body.classList.toggle("light-mode");
+const emojis = ["😎","🔥","🚀","💎","⚡","🎯","🌈","👑","🧠","🐱"];
 
-  if(body.classList.contains("light-mode")){
-    toggleBtn.textContent = "DARK ☾";
-  } else {
-    toggleBtn.textContent = "LIGHT ☀";
-  }
-});
+const gradients = [
+  "linear-gradient(135deg,#667eea,#764ba2)",
+  "linear-gradient(135deg,#ff9a9e,#fad0c4)",
+  "linear-gradient(135deg,#43cea2,#185a9d)",
+  "linear-gradient(135deg,#ff512f,#dd2476)",
+  "linear-gradient(135deg,#00c6ff,#0072ff)",
+  "linear-gradient(135deg,#f7971e,#ffd200)"
+];
 
-const searchBtn = document.getElementById("searchBtn");
-const searchInput = document.getElementById("searchInput");
-const nameText = document.getElementById("name");
-const usernameText = document.getElementById("username");
+function generate(){
+  // Random quote
+  const randomQuote = quotes[Math.floor(Math.random() * quotes.length)];
+  document.getElementById("quote").innerText = randomQuote;
 
-searchBtn.addEventListener("click", () => {
-  const value = searchInput.value.trim();
-  if(value !== ""){
-    nameText.textContent = value;
-    usernameText.textContent = "@" + value;
-  }
-});
+  // Random emoji
+  const randomEmoji = emojis[Math.floor(Math.random() * emojis.length)];
+  document.getElementById("emoji").innerText = randomEmoji;
+
+  // Random number
+  const randomNumber = Math.floor(Math.random() * 1000);
+  document.getElementById("number").innerText = randomNumber;
+
+  // Random background
+  const randomBg = gradients[Math.floor(Math.random() * gradients.length)];
+  document.body.style.background = randomBg;
+}
 </script>
 
 </body>
