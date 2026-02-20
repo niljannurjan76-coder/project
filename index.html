@@ -1,263 +1,307 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Sneakers Shop</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Devfinder</title>
 
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: Arial, sans-serif;
-    }
+<link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
 
-    body {
-      background: #fff;
-      color: #222;
-    }
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:'Space Mono', monospace;
+  transition:0.3s ease;
+}
 
-    .header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 20px 60px;
-      border-bottom: 1px solid #eee;
-      margin-left: 100px;
-    }
+body{
+  background:#141D2F;
+  color:#FFFFFF;
+  display:flex;
+  justify-content:center;
+  padding:40px 20px;
+}
 
-    .header-left {
-      display: flex;
-      align-items: center;
-    }
+.container{
+  width:100%;
+  max-width:730px;
+}
 
-    .logo {
-      font-size: 22px;
-      font-weight: bold;
-      margin-right: 40px;
-    }
+.header{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  margin-bottom:36px;
+}
 
-    nav a {
-      margin-right: 20px;
-      text-decoration: none;
-      color: #555;
-    }
+.logo{
+  font-size:26px;
+  font-weight:700;
+}
 
-    .header-right {
-      display: flex;
-      align-items: center;
-      gap: 25px;
-      margin-top: 12px;
-    }
+.theme-toggle{
+  cursor:pointer;
+  font-size:13px;
+  letter-spacing:2px;
+}
 
-    .cart-icon {
-      width: 24px;
-      height: 24px;
-      background: #ddd;
-      border-radius: 4px;
-    }
+.search{
+  background:#1E2A47;
+  padding:10px;
+  border-radius:15px;
+  display:flex;
+  align-items:center;
+  margin-bottom:24px;
+}
 
-    .profile {
-      width: 40px;
-      height: 40px;
-      background: #ddd;
-      border-radius: 50%;
-      overflow: hidden;
-    }
+.input-wrapper{
+  position:relative;
+  flex:1;
+}
 
-    .product {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      gap: 50px;
-      padding: 40px 0;
-    }
+.input-wrapper input{
+  width:100%;
+  background:none;
+  border:none;
+  outline:none;
+  color:inherit;
+  font-size:18px;
+  padding:10px 10px 10px 45px;
+}
 
-    .images {
-      width: 360px;
-    }
+.input-icon{
+  position:absolute;
+  left:15px;
+  top:50%;
+  transform:translateY(-50%);
+  width:20px;
+  height:20px;
+}
 
-    .main-image {
-      width: 330px;
-      height: 300px;
-      background: #f2f2f2;
-      border-radius: 12px;
-    }
+.search button{
+  background:#0079FF;
+  border:none;
+  padding:14px 28px;
+  border-radius:10px;
+  color:#fff;
+  font-weight:700;
+  cursor:pointer;
+  margin-left:10px;
+}
 
-    .thumbnails {
-      display: flex;
-      gap: 15px;
-      margin-top: 20px;
-    }
+.card{
+  background:#1E2A47;
+  padding:40px;
+  border-radius:15px;
+  display:flex;
+  gap:37px;
+}
 
-    .thumb {
-      width: 70px;
-      height: 70px;
-      background: #f2f2f2;
-      border-radius: 8px;
-    }
+.avatar{
+  width:117px;
+  height:117px;
+  border-radius:50%;
+  background:#0F1624;
+}
 
-    .info {
-      width: 420px;
-    }
+.info{
+  flex:1;
+}
 
-    .company {
-      color: rgb(150, 148, 144);
-      font-size: 12px;
-      letter-spacing: 1px;
-      margin-bottom: 10px;
-    }
+.top{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
 
-    .info h1 {
-      font-size: 36px;
-      margin-bottom: 20px;
-    }
+.name{
+  font-size:26px;
+  font-weight:700;
+}
 
-    .desc {
-      color: #666;
-      line-height: 1.6;
-      margin-bottom: 20px;
-    }
+.username{
+  color:#0079FF;
+  margin-top:4px;
+}
 
-    .price {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
+.joined{
+  font-size:15px;
+  opacity:.7;
+}
 
-    .current {
-      font-size: 24px;
-      font-weight: bold;
-    }
+.bio{
+  margin:20px 0;
+  opacity:.75;
+}
 
-    .discount {
-      background: #000000;
-      color: rgb(255, 255, 255);
-      padding: 4px 8px;
-      border-radius: 6px;
-      font-size: 14px;
-    }
+.stats{
+  background:#141D2F;
+  padding:15px 32px;
+  border-radius:10px;
+  display:flex;
+  justify-content:space-between;
+  margin-bottom:25px;
+}
 
-    .old {
-      color: #aaa;
-      text-decoration: line-through;
-      margin: 10px 0 25px;
-    }
+.stat p:first-child{
+  font-size:13px;
+  opacity:.7;
+}
 
-    .cart {
-      display: flex;
-      gap: 20px;
-      align-items: center;
-    }
+.stat p:last-child{
+  font-size:22px;
+  font-weight:700;
+  margin-top:5px;
+}
 
-    .counter {
-      display: flex;
-      align-items: center;
-      background: #f7f7f7;
-      padding: 10px;
-      border-radius: 8px;
-    }
+.links{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:18px;
+  font-size:15px;
+}
 
-    .counter button {
-      background: none;
-      border: none;
-      font-size: 20px;
-      width: 30px;
-      cursor: pointer;
-    }
+.link-item{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  opacity:.8;
+}
 
-    #count {
-      margin: 0 10px;
-      font-weight: bold;
-    }
+.link-item img{
+  width:20px;
+}
 
-    .add {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      background: rgb(255, 132, 1);
-      border: none;
-      color: white;
-      padding: 12px 26px;
-      border-radius: 8px;
-      cursor: pointer;
-    }
+/* LIGHT MODE */
+.light-mode{
+  background:#F6F8FF;
+  color:#222;
+}
 
-    .add-icon {
-      width: 18px;
-      height: 18px;
-      background: rgba(255,255,255,0.7);
-      border-radius: 4px;
-    }
-  </style>
+.light-mode .search,
+.light-mode .card{
+  background:#FEFEFE;
+}
+
+.light-mode .stats{
+  background:#F6F8FF;
+}
+
+.light-mode .avatar{
+  background:#E2E5F5;
+}
+</style>
 </head>
+
 <body>
 
-<header class="header">
+<div class="container">
 
-  <div class="header-left">
-    <div class="logo">sneakers</div>
-    <nav>
-      <a href="#">Collections</a>
-      <a href="#">Men</a>
-      <a href="#">Women</a>
-      <a href="#">About</a>
-      <a href="#">Contact</a>
-    </nav>
+  <div class="header">
+    <div class="logo">devfinder</div>
+    <div class="theme-toggle" id="toggleTheme">LIGHT ☀</div>
   </div>
 
-  <div class="header-right">
-    <div class="cart-icon"><img src="korzinka white.jpg" width="25px"></div>
-    <div class="profile"><img src="image-avatar.png" width="45px"></div>
-  </div>
+  <div class="search">
+    <div class="input-wrapper">
+      <img 
+        class="input-icon" 
+        src="https://cdn-icons-png.flaticon.com/512/622/622669.png"
+      >
 
-</header>
-
-<main class="product">
-
-  <div class="images">
-    <div class="main-image"><img src="image-product-1.jpg" width="330px" height="300px" style="border-radius: 8px;"></div>
-
-    <div class="thumbnails">
-      <div class="thumb"><img src="асты 1.jpg" width="70px" style="border-radius: 7px; border: 2px solid rgba(255, 117, 4, 0.842); opacity: 0.4; "></div>
-      <div class="thumb"><img src="асты22.jpg" width="70px" style="border-radius: 7px;"></div>
-      <div class="thumb"><img src="асты 3.jpg" width="70px" style="border-radius: 7px;"></div>
-      <div class="thumb"><img src="асты 4.jpg" width="70px" style="border-radius: 7px;"></div>
+      <input type="text" id="searchInput" placeholder="Search GitHub username...">
     </div>
+    <button id="searchBtn">Search</button>
   </div>
 
-  <div class="info">
-    <p class="company">SNEAKER COMPANY</p>
-    <h1>Fall Limited Edition Sneakers</h1>
+  <div class="card">
+    <div class="avatar"><img src="octocat.png" style="border-radius:50%;"></div>
 
-    <p class="desc">
-      These low-profile sneakers are your perfect casual wear companion.
-      Featuring a durable rubber outer sole,they'll withstand everything the weather can offer
-    </p>
-
-    <div class="price">
-      <span class="current">$125.00</span>
-      <span class="discount">50%</span>
-    </div>
-    <p class="old">$250.00</p>
-
-    <div class="cart">
-      <div class="counter">
-        <button id="minus">−</button>
-        <span id="count">0</span>
-        <button id="plus">+</button>
+    <div class="info">
+      <div class="top">
+        <div>
+          <div class="name" id="name">The Octocat</div>
+          <div class="username" id="username">@octocat</div>
+        </div>
+        <div class="joined">Joined 25 Jan 2011</div>
       </div>
 
-      <button class="add">
-        <div class="add-icon"><img src="korzinka orange.jpg" width="18px"></div>
-        Add to cart
-      </button>
+      <div class="bio">
+        This profile has no bio
+      </div>
+
+      <div class="stats">
+        <div class="stat">
+          <p>Repos</p>
+          <p>8</p>
+        </div>
+        <div class="stat">
+          <p>Followers</p>
+          <p>3938</p>
+        </div>
+        <div class="stat">
+          <p>Following</p>
+          <p>9</p>
+        </div>
+      </div>
+
+      <div class="links">
+        <div class="link-item">
+          <img src="https://cdn-icons-png.flaticon.com/512/684/684908.png">
+          <span>San Francisco</span>
+        </div>
+
+        <div class="link-item">
+          <img src="https://cdn-icons-png.flaticon.com/512/733/733579.png">
+          <span>Not Available</span>
+        </div>
+
+        <div class="link-item">
+          <img src="https://cdn-icons-png.flaticon.com/512/1006/1006771.png
+">
+          <span>https://github.blog</span>
+        </div>
+
+        <div class="link-item">
+          <img src="https://cdn-icons-png.flaticon.com/512/1828/1828479.png">
+          <span>@github</span>
+        </div>
+      </div>
+
     </div>
   </div>
 
-</main>
+</div>
 
-<script src="js.js"></script>
+<script>
+const toggleBtn = document.getElementById("toggleTheme");
+const body = document.body;
+
+toggleBtn.addEventListener("click", () => {
+  body.classList.toggle("light-mode");
+
+  if(body.classList.contains("light-mode")){
+    toggleBtn.textContent = "DARK ☾";
+  } else {
+    toggleBtn.textContent = "LIGHT ☀";
+  }
+});
+
+const searchBtn = document.getElementById("searchBtn");
+const searchInput = document.getElementById("searchInput");
+const nameText = document.getElementById("name");
+const usernameText = document.getElementById("username");
+
+searchBtn.addEventListener("click", () => {
+  const value = searchInput.value.trim();
+  if(value !== ""){
+    nameText.textContent = value;
+    usernameText.textContent = "@" + value;
+  }
+});
+</script>
 
 </body>
 </html>
