@@ -1,436 +1,301 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Elite Student Dashboard</title>
 
-</head>
+
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+
 <style>
-
-    /* Task1
-    .btns1{
-        padding:5px;
-        border: none;
-        border-radius: 20px;
-        background-color: rgb(243, 20, 176);
-        color:white;
-        font-family: Playfair;
-    }
-    .tasks{
-        color: rgb(243, 20, 176);
-    } */
-
-
-
-    /* Task2
-     body {
-            margin: 0;
-            font-family: 'Barlow', sans-serif;
-            background-color: #f8f5fc;
-            color: #333;
-        }  */
-
-        /* nav {
-            display: flex;
-            justify-content: center;
-            background-color: #D8BFF1; 
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-            position: sticky;
-            top: 0;
-            z-index: 100;
-        }
-
-        nav button {
-            background: none;
-            border: none;
-            color: #fff;
-            padding: 15px 30px;
-            cursor: pointer;
-            font-size: 18px;
-            transition: all 0.3s ease;
-            margin: 0 8px;
-            border-radius: 8px;
-        }
-
-        nav button:hover {
-            background-color: rgba(255,255,255,0.2);
-            transform: translateY(-2px);
-            font-weight: 600;
-        }
-
-        nav button.active {
-            background-color: rgba(255,255,255,0.4);
-            font-weight: 700;
-            box-shadow: inset 0 -3px 0 rgba(255,255,255,0.7);
-        }
-
-        #sections {
-            max-width: 900px;
-            margin: 50px auto;
-            padding: 0 20px;
-        }
-
-        .content {
-            display: none;
-            text-align: center;
-            background-color: #F3EEFA; 
-            padding: 50px 30px;
-            border-radius: 15px;
-            box-shadow: 0 10px 20px rgba(0,0,0,0.08);
-            opacity: 0;
-            transform: translateY(20px);
-            transition: all 0.5s ease;
-        }
-
-        .content.active {
-            display: block;
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        h1 {
-            font-size: 36px;
-            margin-bottom: 20px;
-            color: #6B4DA1;
-        }
-
-        p {
-            font-size: 18px;
-            line-height: 1.6;
-            color: #555;
-        } */
-
-
-/* Task3
-body {
-        font-family: 'Arial', sans-serif;
-        background-color: #fff9e6;
-        color: #333;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        padding: 50px 20px;
-    }
-
-    h1 {
-        color: #e0c85a;
-    }
-
-    #task-form {
-        display: flex;
-        margin-bottom: 20px;
-    }
-
-    #task-input {
-        padding: 10px;
-        font-size: 16px;
-        border: 2px solid #f3e199;
-        border-radius: 5px 0 0 5px;
-        width: 250px;
-    }
-
-    #add-task {
-        padding: 10px 15px;
-        background-color: #f3e199;
-        border: 2px solid #f3e199;
-        border-left: none;
-        cursor: pointer;
-        font-size: 16px;
-        border-radius: 0 5px 5px 0;
-        transition: background 0.3s;
-    }
-
-    #add-task:hover {
-        background-color: #f7e88f;
-    }
-
-    ul {
-        list-style: none;
-        padding: 0;
-        width: 300px;
-    }
-
-    li {
-        background-color: #fff6cc;
-        padding: 10px;
-        margin-bottom: 10px;
-        border-radius: 5px;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        transition: background 0.3s;
-        cursor: pointer;
-    }
-
-    li.completed {
-        text-decoration: line-through;
-        opacity: 0.6;
-        background-color: #fff1b8;
-    }
-
-    .delete-btn {
-        background-color: #f3c74d;
-        border: none;
-        padding: 5px 10px;
-        border-radius: 5px;
-        cursor: pointer;
-        font-weight: bold;
-        transition: background 0.3s;
-    }
-
-    .delete-btn:hover {
-        background-color: #f1b900;
-    } */
-
-
-
-
-
-/* Task4
-    body {
-        font-family: 'Arial', sans-serif;
-        background-color: #fff9e6; 
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        height: 100vh;
-        margin: 0;
-    }
-
-    h1 {
-        color: #e0c85a;
-        margin-bottom: 20px;
-    }
-
-    .stars {
-        display: flex;
-        gap: 10px;
-        margin-bottom: 20px;
-    }
-
-    .star {
-        font-size: 50px;
-        color: #ccc;
-        cursor: pointer;
-        transition: color 0.3s, transform 0.2s;
-    }
-
-    .star:hover,
-    .star.hovered {
-        transform: scale(1.2);
-    }
-
-    .star.active {
-        color: #FFD700; 
-    }
-
-    #rating-text {
-        font-size: 20px;
-        font-weight: bold;
-        color: #555;
-    } */
-
-
-
-    body {
-    font-family: Arial, sans-serif;
-    background: #f1fff4; /* очень светлый зелёный */
-    padding: 30px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
 }
 
-h1 {
-    margin-bottom: 20px;
-    color: #4CAF50; /* мягкий зелёный */
+body{
+    font-family:'Inter',sans-serif;
+    min-height:100vh;
+    background:#0f0f17;
+    color:white;
+    overflow-x:hidden;
 }
 
-.language-switcher {
-    margin-bottom: 20px;
+body::before{
+    content:"";
+    position:fixed;
+    width:700px;
+    height:700px;
+    background:linear-gradient(45deg,#ff00cc,#3333ff);
+    filter:blur(220px);
+    top:-200px;
+    left:-200px;
+    z-index:-1;
 }
 
-.language-switcher button {
-    margin: 0 5px;
-    padding: 6px 12px;
-    cursor: pointer;
-    border: 1px solid #b7e4c7;
-    background-color: #b7e4c7;
-    border-radius: 5px;
-    transition: 0.3s;
+body::after{
+    content:"";
+    position:fixed;
+    width:700px;
+    height:700px;
+    background:linear-gradient(45deg,#00ffcc,#ff6600);
+    filter:blur(220px);
+    bottom:-200px;
+    right:-200px;
+    z-index:-1;
 }
 
-.language-switcher button:hover {
-    background-color: #95d5b2;
+header{
+    padding:60px 20px;
+    text-align:center;
 }
 
-.products {
-    display: flex;
-    gap: 20px;
-    flex-wrap: wrap;
-    justify-content: center;
+header h1{
+    font-family:'Orbitron',sans-serif;
+    font-size:42px;
+    background:linear-gradient(90deg,#00f5ff,#ff00cc,#00ffcc);
+    background-size:200% 200%;
+    background-clip:text;
+    -webkit-background-clip:text;
+    color:transparent;
+    -webkit-text-fill-color:transparent;
+    animation:shine 5s linear infinite;
 }
 
-.card {
-    background: #d8f3dc;
-    padding: 20px;
-    border-radius: 12px;
-    width: 180px;
-    text-align: center;
-    box-shadow: 0 8px 16px rgba(0,0,0,0.08);
-    transition: transform 0.3s;
+.container{
+    max-width:1400px;
+    margin:auto;
+    padding:20px;
 }
 
-.card:hover {
-    transform: translateY(-5px);
+.filters{
+    display:flex;
+    flex-wrap:wrap;
+    gap:15px;
+    justify-content:center;
+    margin-bottom:40px;
 }
 
-.card button {
-    margin-top: 10px;
-    padding: 6px 12px;
-    border: none;
-    background: #95d5b2;
-    cursor: pointer;
-    border-radius: 5px;
-    transition: background 0.3s;
+.filters input,
+.filters select,
+.filters button{
+    padding:12px 18px;
+    border-radius:14px;
+    border:1px solid rgba(255,255,255,0.15);
+    background:#111;
+    color:white;
+    font-size:14px;
+    transition:0.3s;
 }
 
-.card button:hover {
-    background: #74c69d;
+.filters input:focus,
+.filters select:focus{
+    outline:none;
+    border-color:#00f5ff;
+    box-shadow:0 0 12px #00f5ff;
 }
 
-#cart {
-    margin-top: 30px;
-    background: #c7f9cc;
-    padding: 20px;
-    border-radius: 12px;
-    width: 300px;
+.filters select option{
+    background:#111;
+    color:white;
 }
 
-#cart ul {
-    padding: 0;
-    list-style: none;
+.filters button{
+    cursor:pointer;
+    background:linear-gradient(90deg,#ff00cc,#3333ff);
+    border:none;
+    font-weight:600;
 }
 
-#cart li {
-    padding: 6px 0;
-    border-bottom: 1px solid #95d5b2;
+.filters button:hover{
+    transform:scale(1.07);
+    box-shadow:0 0 20px #ff00cc;
 }
 
 
+.grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fill,minmax(280px,1fr));
+    gap:25px;
+}
+
+
+.card{
+    background:rgba(255,255,255,0.05);
+    border:1px solid rgba(255,255,255,0.1);
+    padding:25px;
+    border-radius:20px;
+    backdrop-filter:blur(25px);
+    transition:0.4s;
+}
+
+.card:hover{
+    transform:translateY(-10px) scale(1.03);
+    box-shadow:0 0 35px rgba(255,0,200,0.5);
+}
+
+.card h3{
+    margin-bottom:15px;
+    font-weight:600;
+}
+
+.badge{
+    display:inline-block;
+    padding:6px 12px;
+    border-radius:30px;
+    font-size:12px;
+    margin:4px 4px 0 0;
+    background:rgba(255,255,255,0.1);
+}
+
+.empty{
+    text-align:center;
+    font-size:20px;
+    opacity:0.6;
+}
 </style>
+</head>
 <body>
-    <!-- TASK 1 -->
-    <!-- <div id="colors">
-    <h2 class="tasks">Task 1</h2>
-    <button data-color="beige" class="btns1">Beige</button>
-    <button data-color="pink" class="btns1">Pink</button>
-    <button data-color="lightblue" class="btns1">Light Blue</button>
-    <button data-color="lightyellow" class="btns1">Light Yellow</button> 
-    <br /><br />
-    <button data-color="reset" class="btns1">RESET</button>
-</div> -->
 
+<header>
+    <h1>🚀 Elite Student Dashboard</h1>
+</header>
 
+<div class="container">
 
-
-
-
-<!-- TASK 2 -->
-    <!-- <nav>
-        <button data-section="home" class="active">Home</button>
-        <button data-section="portfolio">Portfolio</button>
-        <button data-section="blog">Blog</button>
-        <button data-section="contact">Contact</button>
-    </nav>
-
-    <div id="sections">
-        <div data-content="home" class="content active">
-            <h1>Welcome to Home</h1>
-            <p>This is the home section of our single-page site.</p>
-        </div>
-        <div data-content="portfolio" class="content">
-            <h1>Portfolio</h1>
-            <p>Here is some of my work and projects.</p>
-        </div>
-        <div data-content="blog" class="content">
-            <h1>Blog</h1>
-            <p>Read my latest articles and thoughts.</p>
-        </div>
-        <div data-content="contact" class="content">
-            <h1>Contact</h1>
-            <p>Get in touch via email or social media.</p>
-        </div>
-    </div> -->
-
-
-
-
-
-
-<!-- TASK3 -->
-<!-- <h1>Task Manager</h1>
-
-<div id="task-form">
-    <input type="text" id="task-input" placeholder="Add a task..." />
-    <button id="add-task">Add</button>
+<div class="filters">
+    <input id="search" placeholder="Search student..." />
+    <input id="age" type="number" placeholder="Min age" />
+    <select id="state">
+        <option value="all">All States</option>
+    </select>
+    <select id="sort">
+        <option value="none">Sort</option>
+        <option value="az">Name A-Z</option>
+        <option value="za">Name Z-A</option>
+        <option value="age">Youngest First</option>
+    </select>
+    <button id="reset">Reset</button>
 </div>
 
-<ul id="task-list">
-</ul> -->
+<div class="grid" id="list"></div>
 
-
-
-
-
-
-
-
-
-<!-- TASK4 -->
-<!-- <h1>Rate Us</h1>
-<div class="stars">
-    <span class="star" data-rate="1">&#9733;</span>
-    <span class="star" data-rate="2">&#9733;</span>
-    <span class="star" data-rate="3">&#9733;</span>
-    <span class="star" data-rate="4">&#9733;</span>
-    <span class="star" data-rate="5">&#9733;</span>
-</div>
-<div id="rating-text">Your rating: 0</div> -->
-
-
-
-
-
-
-
-<h1 id="main-title">Our Products</h1>
-<div class="language-switcher">
-    <button data-lang="kz">KZ</button>
-    <button data-lang="ru">RU</button>
-    <button data-lang="en">EN</button>
 </div>
 
-<div class="products" id="product-list">
-    <div class="card" data-id="pl" data-name="Phone">
-        <h3 class="product-title">Phone</h3>
-        <p class="product-desc">A cool smartphone.</p>
-        <button>Add to Cart</button>
-    </div>
-    <div class="card" data-id="lp" data-name="Laptop">
-        <h3 class="product-title">Laptop</h3>
-        <p class="product-desc">Powerful and sleek.</p>
-        <button>Add to Cart</button>
-    </div>
-    <div class="card" data-id="tb" data-name="Tablet">
-        <h3 class="product-title">Tablet</h3>
-        <p class="product-desc">Portable and fast.</p>
-        <button>Add to Cart</button>
-    </div>
-</div>
-    <script src="js.js"></script>
+<script>
+
+const states=[
+"California - Los Angeles",
+"Texas - Houston",
+"Florida - Miami",
+"New York - NYC",
+"Illinois - Chicago",
+"Arizona - Phoenix",
+"Nevada - Las Vegas",
+"Georgia - Atlanta",
+"Washington - Seattle",
+"Colorado - Denver"
+];
+
+const universities=[
+"Harvard University","Stanford University","MIT","UCLA",
+"Princeton University","Columbia University","Yale University","NYU"
+];
+
+const first=[
+"James","John","Robert","Michael","William","David","Joseph","Daniel",
+"Matthew","Anthony","Joshua","Andrew","Ryan","Ethan","Liam","Noah",
+"Logan","Lucas","Benjamin","Elijah"
+];
+
+const last=[
+"Smith","Johnson","Brown","Williams","Jones","Garcia","Miller","Davis",
+"Wilson","Anderson","Thomas","Taylor","Moore","Jackson","Martin",
+"Lee","Perez","Thompson","White","Harris"
+];
+
+const students=[];
+
+for(let i=0;i<52;i++){
+    students.push({
+        first:first[Math.floor(Math.random()*first.length)],
+        last:last[Math.floor(Math.random()*last.length)],
+        age:Math.floor(Math.random()*10)+18,
+        state:states[Math.floor(Math.random()*states.length)],
+        university:universities[Math.floor(Math.random()*universities.length)]
+    });
+}
+
+const list=document.getElementById("list");
+const searchInput=document.getElementById("search");
+const ageInput=document.getElementById("age");
+const stateSelect=document.getElementById("state");
+const sortSelect=document.getElementById("sort");
+const resetBtn=document.getElementById("reset");
+
+states.forEach(s=>{
+    const opt=document.createElement("option");
+    opt.value=s;
+    opt.textContent=s;
+    stateSelect.appendChild(opt);
+});
+
+function render(arr){
+    list.innerHTML="";
+    if(arr.length===0){
+        list.innerHTML="<div class='empty'>No students found</div>";
+        return;
+    }
+    arr.forEach(s=>{
+        list.innerHTML+=`
+        <div class="card">
+            <h3>${s.first} ${s.last}</h3>
+            <div class="badge">Age: ${s.age}</div>
+            <div class="badge">${s.state}</div>
+            <div class="badge">${s.university}</div>
+        </div>
+        `;
+    });
+}
+
+function applyAll(){
+    const search=searchInput.value.toLowerCase();
+    const minAge=Number(ageInput.value);
+    const state=stateSelect.value;
+    const sort=sortSelect.value;
+
+    let result=students.filter(s=>{
+        const name=(s.first+" "+s.last).toLowerCase();
+        return name.includes(search) &&
+               (minAge ? s.age>=minAge : true) &&   
+               (state==="all" || s.state===state);
+    });
+
+    if(sort==="az") result.sort((a,b)=>a.first.localeCompare(b.first));
+    if(sort==="za") result.sort((a,b)=>b.first.localeCompare(a.first));
+    if(sort==="age") result.sort((a,b)=>a.age-b.age);
+
+    render(result);
+}
+
+searchInput.addEventListener("input",applyAll);
+ageInput.addEventListener("input",applyAll);
+stateSelect.addEventListener("change",applyAll);
+sortSelect.addEventListener("change",applyAll);
+
+resetBtn.addEventListener("click",()=>{
+    searchInput.value="";
+    ageInput.value="";
+    stateSelect.value="all";
+    sortSelect.value="none";
+    render(students);
+});
+
+render(students);
+
+</script>
+
 </body>
 </html>
